@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assignment.Models;
+using PP.Library.Models;
 
-namespace Assignment.Library.Services
+namespace PP.Library.Services
 {
     public class ClientServices
     {
@@ -13,7 +13,7 @@ namespace Assignment.Library.Services
         static public void CreateClient(ref List<Client> clients)
         {
             string name, notes;
-            int id = clients.Capacity + 1;
+            int id = clients.Count+1;
 
             Console.Write("Type client's name: ");
             name = Console.ReadLine() ?? "No name given";

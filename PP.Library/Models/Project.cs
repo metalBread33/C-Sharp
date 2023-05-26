@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment.Models
+namespace PP.Library.Models
 {
     public class Project
     {

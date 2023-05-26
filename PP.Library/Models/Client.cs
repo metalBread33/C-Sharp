@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment.Models
+namespace PP.Library.Models
 {
     public class Client
     {
