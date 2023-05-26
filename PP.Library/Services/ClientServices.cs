@@ -50,6 +50,7 @@ namespace PP.Library.Services
 
             if (confirm == 'n')
                 return;
+            printClientInfo(client, true);
             do
             {
                 int choice;
@@ -121,13 +122,13 @@ namespace PP.Library.Services
             if (!c.IsActive)
                 Console.WriteLine("Name: " + c.Name + "\nID: " + c.Id +
                     "\nOpened: " + c.OpenDate + "\nClosed: " + c.CloseDate +
-                    "\nNotes: " + c.Notes + '\n');
+                    "\nNotes: " + c.Notes );
             else
                 Console.WriteLine("Name: " + c.Name + "\nID: " + c.Id +
                    "\nOpened: " + c.OpenDate + "\nClosed: Not closed yet " +
-                   "\nNotes: " + c.Notes + '\n');
+                   "\nNotes: " + c.Notes);
             if (edit)
-                Console.WriteLine("Closed: " + c.IsActive.ToString());
+                Console.WriteLine("Closed: " + (!c.IsActive).ToString());
 
         }// end print info
 
