@@ -14,6 +14,8 @@ namespace PP.Maui.ViewModels
             {
                 return "heyo";
             }
+
+            set { }
       
         }
 
