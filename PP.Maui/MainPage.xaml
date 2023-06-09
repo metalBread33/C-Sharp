@@ -3,63 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PP.Maui.MainPage">
 
-    <ScrollView>
-       <!-- <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout> -->
-
-        <Grid> <!--Grid is best used for desktop applications-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="8*" />
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+    <Grid> <!--Grid is best used for desktop applications-->
+          
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="10*"/>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row ="0" Grid.Column="0"> <!--Grid within a grid-->
+            <Grid Grid.Row ="0" > <!--Grid within a grid-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="10*"/>  <!--Search bar (?)-->
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Entry Grid.Column="0"  Text="{Binding Path = Hello}"> <!--Entry == TextboxBinding lets us bind to an object-->
 
                 </Entry>
-                <Button Grid.Column="1" Text="Button"></Button>
+                <Button Grid.Column="1" Text="Search"></Button>
             </Grid>
-            <Entry Grid.Column="0" Grid.Row="1" Text="{Binding Path= Test}"></Entry>
+
+            <ListView Grid.Row="1"> <!--Where list of clients will live-->
+                
+            </ListView>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Create Client" Grid.Column="0"></Button>
+                <Button Text="Edit Client Info" Grid.Column="1"></Button>
+                <Button Grid.Column="2" Text="View Client's Project" ></Button>
+                <Button Grid.Column="3" Text="Delete Client"></Button>
+                
+                
+            </Grid>
+            
            
         </Grid>
-    </ScrollView>
+    
 
 </ContentPage>

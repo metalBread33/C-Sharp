@@ -14,14 +14,8 @@ namespace PP.Maui.ViewModels
             {
                 return "heyo";
             }
+      
         }
 
-        public string Test
-        {
-            get
-            {
-                return "test";
-            }
-        }
     }
 }
