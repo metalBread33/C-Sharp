@@ -1,24 +1,20 @@
-﻿namespace PP.Maui
+﻿using System.Net.Security;
+using PP.Maui.ViewModels;
+
+namespace PP.Maui
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+
+
 
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainViewModel(); //BIndingCOntext is class where binding path is found
+            //Hello = "Hello World";
+            
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
     }
 }

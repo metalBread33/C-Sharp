@@ -4,7 +4,7 @@
              x:Class="PP.Maui.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
+       <!-- <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
@@ -35,7 +35,31 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-        </VerticalStackLayout>
+        </VerticalStackLayout> -->
+
+        <Grid> <!--Grid is best used for desktop applications-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row ="0" Grid.Column="0"> <!--Grid within a grid-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0"  Text="{Binding Path = Hello}"> <!--Entry == TextboxBinding lets us bind to an object-->
+
+                </Entry>
+                <Button Grid.Column="1" Text="Button"></Button>
+            </Grid>
+            <Entry Grid.Column="0" Grid.Row="1" Text="{Binding Path= Test}"></Entry>
+           
+        </Grid>
     </ScrollView>
 
 </ContentPage>

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PP.Library.Models
 {
-    internal class Employee
+    public class Employee
     {
+        public int id { get; set; }
+        public string name { get; set; }
+        public decimal rate { get; set; }
     }
 }
