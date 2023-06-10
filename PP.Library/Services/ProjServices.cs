@@ -10,6 +10,18 @@ namespace PP.Library.Services
 {
     public class ProjServices
     {
+
+        private static ProjServices? _instance;
+
+        public static ProjServices Current
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ProjServices();
+                return _instance;
+            }
+        }
         /**********************CRUD FUNCTIONS**********************/
 
         static public void CreateProject(ref List<Project> projects,

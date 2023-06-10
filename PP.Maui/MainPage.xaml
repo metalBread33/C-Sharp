@@ -19,10 +19,10 @@
                 <Entry Grid.Column="0"  Text="{Binding Path = Hello}"> <!--Entry == TextboxBinding lets us bind to an object-->
 
                 </Entry>
-                <Button Grid.Column="1" Text="Search"></Button>
+                <Button Grid.Column="1" Text="Search" Clicked="Button_Clicked"></Button>
             </Grid>
 
-            <ListView Grid.Row="1"> <!--Where list of clients will live-->
+            <ListView Grid.Row="1" ItemsSource="{Binding Path = Clients}"> <!--Where list of clients will live-->
                 
             </ListView>
 
@@ -34,8 +34,8 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button Text="Create Client" Grid.Column="0"></Button>
-                <Button Text="Edit Client Info" Grid.Column="1"></Button>
+                <Button Grid.Column="0" Text="Create Client" Clicked="Create_Client_Clicked"></Button>
+                <Button Grid.Column="1" Text="Edit Client Info" ></Button>
                 <Button Grid.Column="2" Text="View Client's Project" ></Button>
                 <Button Grid.Column="3" Text="Delete Client"></Button>
                 

@@ -9,6 +9,39 @@ namespace PP.Library.Services
 {
     public class ClientServices
     {
+        private static ClientServices? _instance;
+
+        public static ClientServices Current
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ClientServices();
+                return _instance;
+            }
+        }
+
+        private List<Client> clients;
+
+        private ClientServices() 
+        {
+            clients = new List<Client>()
+           {
+               new Client {Id = 0, OpenDate = DateTime.Now, Name = "John", Notes = "N/a" },
+               new Client {Id = 1, OpenDate = DateTime.Now, Name = "H", Notes = "N/a" },
+               new Client {Id = 2, OpenDate = DateTime.Now, Name = "k", Notes = "N/a" }
+           };
+        }
+
+        public List<Client> Clients 
+        { 
+            get 
+            { 
+                return clients; 
+            }
+        }
+
+        /*
         /**********************CRUD FUNCTIONS**********************/
         static public void CreateClient(ref List<Client> clients)
         {
@@ -150,5 +183,6 @@ namespace PP.Library.Services
 
             return option;
         } //end select client
+
     }
 }

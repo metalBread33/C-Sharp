@@ -28,6 +28,11 @@ namespace PP.Library.Models
             CloseDate = default(DateTime);
         }
 
+        public override string ToString()
+        {
+            return $"{Id}) {Name}";
+        }
+        public Client() { }
         
 
     }//end class Client
