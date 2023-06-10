@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.FileIO;
 using PP.Library.Models;
 
 namespace PP.Library.Services
@@ -41,7 +42,29 @@ namespace PP.Library.Services
             }
         }
 
-        /*
+        /*For Maui APP
+        /**********************CRUD FUNCTIONS**********************/
+        public void Delete(Client client) 
+        {
+            int deleteThisClient = client.Id;
+            Clients.RemoveAt(deleteThisClient) ;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*For Console APP
         /**********************CRUD FUNCTIONS**********************/
         static public void CreateClient(ref List<Client> clients)
         {

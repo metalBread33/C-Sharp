@@ -9,7 +9,7 @@ namespace PP.Library.Models
     public class Client
     {
         //Variables
-        internal int Id { get; set; }
+        public int Id { get; set; }
         internal DateTime OpenDate { get; set; }
         internal DateTime CloseDate { get; set; }
         internal bool IsActive { get; set; }
@@ -30,7 +30,7 @@ namespace PP.Library.Models
 
         public override string ToString()
         {
-            return $"{Id}) {Name}";
+            return $"{Id+1}) {Name}";
         }
         public Client() { }
         

@@ -35,7 +35,7 @@ namespace PP.Maui
 
         private void Delete_Client_Clicked(object sender, EventArgs e)
         {
-
+            (BindingContext as MainViewModel).Delete();
         }
 
 
