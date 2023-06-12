@@ -20,17 +20,17 @@ namespace PP.Maui
 
         private void Create_Client_Clicked(object sender, EventArgs e)
         {
-
+            Shell.Current.GoToAsync("//Add_or_Edit_Client");
         }
 
         private void Edit_Client_Clicked(object sender, EventArgs e)
         {
-
+            Shell.Current.GoToAsync("//Add_or_Edit_Client");
         }
 
         private void View_Client_Clicked(object sender, EventArgs e)
         {
-
+            Shell.Current.GoToAsync("//View_Client");
         }
 
         private void Delete_Client_Clicked(object sender, EventArgs e)

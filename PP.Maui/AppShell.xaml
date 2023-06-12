@@ -4,11 +4,22 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PP.Maui"
+    xmlns:local2="clr-namespace:PP.Maui.Views"
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"/>
+
+    <ShellContent
+        Title="Add or Edit Client"
+        ContentTemplate="{DataTemplate local2:Add_or_Edit_Client}"
+        Route="Add_or_Edit_Client"/>
+   
+    <ShellContent
+        Title="Client Info"
+        ContentTemplate="{DataTemplate local2:ViewClient}"
+        Route="View_Client"/>
 
 </Shell>
