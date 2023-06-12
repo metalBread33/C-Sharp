@@ -2,11 +2,34 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PP.Maui.Views.Add_or_Edit_Client"
-             Title ="Add_or_Edit_Cilent">
+             Title ="Add/Edit Cilent"
+             NavigatedFrom="OnLeaving"
+             NavigatedTo="OnArriving">
+        
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+      
+        <Label Grid.Column="0" Grid.Row=" 0"
+            Text="Client's Name:"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Entry Grid.Column ="1"  Grid.Row ="0" Text="{Binding Path=Name, Mode=TwoWay}"></Entry>
+
+            <Label Grid.Column="0" Grid.Row="1"
+                   Text="Notes:"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"></Label>
+            <Entry Grid.Column="1" Grid.Row="1"
+                   Text="{Binding Path= Notes, Mode=TwoWay}"></Entry>
+                   
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
