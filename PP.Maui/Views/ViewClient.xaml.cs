@@ -5,6 +5,7 @@ public partial class ViewClient : ContentPage
 	public ViewClient()
 	{
 		InitializeComponent();
+        BindingContext = new ViewClient();
 	}
 
     private void Create_Project_Clicked(object sender, EventArgs e)
@@ -25,5 +26,10 @@ public partial class ViewClient : ContentPage
     private void Search_Clicked(object sender, EventArgs e)
     {
 
+    }
+
+    private void Back_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
     }
 }

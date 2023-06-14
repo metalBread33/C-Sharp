@@ -12,11 +12,18 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage"/>
 
+
     <ShellContent
-        Title="Add or Edit Client"
-        ContentTemplate="{DataTemplate local2:Add_or_Edit_Client}"
-        Route="Add_or_Edit_Client"/>
-   
+        Title="Edit Client"
+        ContentTemplate ="{DataTemplate local2:EditClient}"   
+        Route="EditClient"/>
+
+    <ShellContent
+        Title="Add Client"
+        ContentTemplate="{DataTemplate local2:Add_Client}"
+        Route="Add_Client"/>
+
+    
     <ShellContent
         Title="Client Info"
         ContentTemplate="{DataTemplate local2:ViewClient}"

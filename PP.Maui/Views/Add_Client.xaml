@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PP.Maui.Views.Add_or_Edit_Client"
-             Title ="Add/Edit Cilent"
+             x:Class="PP.Maui.Views.Add_Client"
+             Title ="Add Cilent"
              NavigatedFrom="OnLeaving"
              NavigatedTo="OnArriving">
         
@@ -11,6 +11,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition ></ColumnDefinition>
@@ -27,9 +28,20 @@
                    Text="Notes:"
                    VerticalOptions="Center"
                    HorizontalOptions="Center"></Label>
+            
             <Entry Grid.Column="1" Grid.Row="1"
                    Text="{Binding Path= Notes, Mode=TwoWay}"></Entry>
-                   
         </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Text="OK" Clicked="OK_Clicked"></Button>
+        <Button Grid.Column="1" Text="Cancel" Clicked="Cancel_Clicked"></Button>
+
+        </Grid>
+
     </VerticalStackLayout>
 </ContentPage>

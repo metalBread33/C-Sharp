@@ -28,9 +28,9 @@ namespace PP.Library.Services
         {
             clients = new List<Client>()
            {
-               new Client {Id = 0, OpenDate = DateTime.Now, Name = "John", Notes = "N/a" },
-               new Client {Id = 1, OpenDate = DateTime.Now, Name = "H", Notes = "N/a" },
-               new Client {Id = 2, OpenDate = DateTime.Now, Name = "k", Notes = "N/a" }
+               new Client {Id = 1, OpenDate = DateOnly.FromDateTime(DateTime.Today), Name = "John", Notes = "N/a" },
+               new Client {Id = 2, OpenDate = DateOnly.FromDateTime(DateTime.Today), Name = "H", Notes = "N/a" },
+               new Client {Id = 3, OpenDate = DateOnly.FromDateTime(DateTime.Today), Name = "k", Notes = "N/a" }
            };
         }
 
@@ -42,6 +42,11 @@ namespace PP.Library.Services
             }
         }
 
+        public Client GetClientByID (int id)
+        {
+            return clients[id];
+        }
+
         /*For Maui APP
         /**********************CRUD FUNCTIONS**********************/
         public void Delete(Client client) 
@@ -50,9 +55,9 @@ namespace PP.Library.Services
             Clients.RemoveAt(deleteThisClient) ;
         }
 
-        public void Create()
+        public void Add(Client client)
         {
-
+            Clients.Add(client);
         }
 
 
@@ -82,7 +87,7 @@ namespace PP.Library.Services
             Console.Write("Notes on the client: ");
             notes = Console.ReadLine() ?? "None";
 
-            clients.Add(new Client(id, DateTime.Now, name, notes));
+            clients.Add(new Client(id, DateOnly.FromDateTime(DateTime.Today), name, notes));
 
             Console.WriteLine("Added client: " + name);
         } //end CreateClient
@@ -102,7 +107,7 @@ namespace PP.Library.Services
                 return;
 
             char confirm;
-            DateTime newDT;
+            DateOnly newDT;
             Client client = clients[clientNum];
 
             Console.WriteLine("Update client " + client.Name + '?' +
@@ -130,14 +135,14 @@ namespace PP.Library.Services
                 if (choice == 2)
                 {
                     Console.Write("Please enter new date: ");
-                    DateTime.TryParse(Console.ReadLine(), out newDT);
+                    DateOnly.TryParse(Console.ReadLine(), out newDT);
                     client.OpenDate = newDT;
                 }
 
                 if (choice == 3)
                 {
                     Console.Write("Please enter new date: ");
-                    DateTime.TryParse(Console.ReadLine(), out newDT);
+                    DateOnly.TryParse(Console.ReadLine(), out newDT);
                     client.CloseDate = newDT;
                 }
 

@@ -42,6 +42,17 @@ namespace PP.Maui.ViewModels
             if (SelectedClient == null)
                 return;
             ClientServices.Current.Delete(SelectedClient);
+           // NotifyPropertyChanged("Clients");
+           RefreshView();
+        }
+
+        public void Add()
+        {
+            Shell.Current.GoToAsync("//Add_Client");
+            NotifyPropertyChanged("Clients");
+        }
+        public void RefreshView()
+        {
             NotifyPropertyChanged("Clients");
         }
 

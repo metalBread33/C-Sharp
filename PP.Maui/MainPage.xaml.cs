@@ -20,12 +20,12 @@ namespace PP.Maui
 
         private void Create_Client_Clicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync("//Add_or_Edit_Client");
+            (BindingContext as MainViewModel).Add();
         }
 
         private void Edit_Client_Clicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync("//Add_or_Edit_Client");
+            Shell.Current.GoToAsync("//EditClient");
         }
 
         private void View_Client_Clicked(object sender, EventArgs e)
@@ -38,6 +38,14 @@ namespace PP.Maui
             (BindingContext as MainViewModel).Delete();
         }
 
+        private void NavigatedTo(object sender, NavigatedToEventArgs e)
+        {
+            (BindingContext as MainViewModel).RefreshView();
+        }
 
+        private void RefreshView()
+        {
+
+        }
     }
 }

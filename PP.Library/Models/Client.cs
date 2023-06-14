@@ -10,14 +10,14 @@ namespace PP.Library.Models
     {
         //Variables
         public int Id { get; set; }
-        internal DateTime OpenDate { get; set; }
-        internal DateTime CloseDate { get; set; }
-        internal bool IsActive { get; set; }
-        internal string Name { get; set; }
-        internal string Notes { get; set; }
+        public DateOnly OpenDate { get; set; }
+        public DateOnly CloseDate { get; set; }
+        public bool IsActive { get; set; }
+        public string Name { get; set; }
+        public string Notes { get; set; }
 
    
-        public Client(int id, DateTime open, string name, 
+        public Client(int id, DateOnly open, string name, 
             string notes) 
         {
             Id = id;
@@ -25,12 +25,12 @@ namespace PP.Library.Models
             Name = name;
             Notes = notes;
             IsActive = true;
-            CloseDate = default(DateTime);
+            CloseDate = default(DateOnly);
         }
 
         public override string ToString()
         {
-            return $"{Id+1}) {Name}";
+            return $"{Id}) {Name}";
         }
         public Client() { }
         
