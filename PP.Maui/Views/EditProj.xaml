@@ -28,8 +28,26 @@
                    HorizontalOptions="Center" VerticalOptions="Center"></Label>
             <Label Text="Closed" Grid.Column="0" Grid.Row="4" 
                    HorizontalOptions="Center" VerticalOptions="Center"></Label>
-            
-            
+
+            <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Path=ProjName,
+                Mode=TwoWay}"></Entry>
+            <Entry Grid.Column="1" Grid.Row="1" Text="{Binding Path=ProjNotes,
+                Mode=TwoWay}"></Entry>
+            <DatePicker Grid.Column="1" Grid.Row="2" Date="{Binding Path=OpenDate,
+                Mode=TwoWay}"></DatePicker>
+            <DatePicker Grid.Column="1" Grid.Row="3" Date="{Binding Path=CloseDate,
+                Mode=TwoWay}"></DatePicker>
+            <CheckBox Grid.Column="1" Grid.Row="4" CheckedChanged="SetActive"></CheckBox>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="OK" Grid.Column="0" Clicked="OK_Clicked"></Button>
+            <Button Text="Cancel" Grid.Column="1" Clicked="Cancel_Clicked"></Button>
         </Grid>
     </VerticalStackLayout>
 </ContentPage>

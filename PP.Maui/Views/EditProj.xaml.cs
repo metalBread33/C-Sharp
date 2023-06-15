@@ -6,4 +6,9 @@ public partial class EditProj : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+
+    }
 }

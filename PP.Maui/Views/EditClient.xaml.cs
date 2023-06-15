@@ -23,7 +23,7 @@ public partial class EditClient : ContentPage
         BindingContext = new EditClientVM();
     }
 
-    private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void SetActive(object sender, CheckedChangedEventArgs e)
     {
 
     }
