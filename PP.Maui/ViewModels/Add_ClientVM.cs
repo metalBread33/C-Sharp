@@ -51,7 +51,7 @@ namespace PP.Maui.ViewModels
         public void AddClient()
         {
             if(ID == 0)
-                ClientServices.Current.Add(new Client { Name = Name, Notes=Notes });
+                ClientServices.Current.Add(new Client { Name = Name, Notes=Notes, Id=ClientServices.Current.Clients.Count });
             Shell.Current.GoToAsync("//MainPage");
         }
 

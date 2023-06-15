@@ -15,6 +15,7 @@ namespace PP.Library.Models
         public bool IsActive { get; set; }
         public string Name { get; set; }
         public string Notes { get; set; }
+        public List<Project> Projects { get; set; }
 
    
         public Client(int id, DateOnly open, string name, 
@@ -30,7 +31,7 @@ namespace PP.Library.Models
 
         public override string ToString()
         {
-            return $"{Id}) {Name}";
+            return $"{Id+1}) {Name}";
         }
         public Client() { }
         

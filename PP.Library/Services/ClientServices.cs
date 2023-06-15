@@ -22,17 +22,7 @@ namespace PP.Library.Services
             }
         }
 
-        private List<Client> clients;
-
-        private ClientServices() 
-        {
-            clients = new List<Client>()
-           {
-               new Client {Id = 1, OpenDate = DateOnly.FromDateTime(DateTime.Today), Name = "John", Notes = "N/a" },
-               new Client {Id = 2, OpenDate = DateOnly.FromDateTime(DateTime.Today), Name = "H", Notes = "N/a" },
-               new Client {Id = 3, OpenDate = DateOnly.FromDateTime(DateTime.Today), Name = "k", Notes = "N/a" }
-           };
-        }
+        private List<Client> clients = new List<Client>();
 
         public List<Client> Clients 
         { 
