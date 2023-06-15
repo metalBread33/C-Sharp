@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PP.Maui.ViewModels
 {
-    internal class ViewClientVM1
+    class AddProj
     {
     }
 }

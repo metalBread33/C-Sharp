@@ -32,6 +32,11 @@ namespace PP.Library.Models
             Owner = owner;
         }
 
+        public override string ToString()
+        {
+            return $"{Id}) {ShortName}";
+        }
+
     } //end class
     
 } //end namespace

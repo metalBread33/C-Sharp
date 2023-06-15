@@ -27,6 +27,17 @@
     <ShellContent
         Title="Client Info"
         ContentTemplate="{DataTemplate local2:ViewClient}"
-        Route="View_Client"/>
+        Route="ViewClient"/>
+
+    <ShellContent
+        Title="Create Project"
+        ContentTemplate="{DataTemplate local2:AddProj}"
+        Route="AddProj"/>
+
+    <ShellContent
+        Title="EditProject"
+        ContentTemplate="{DataTemplate local2:EditProj}"
+        Route="EditProj"
+        />
 
 </Shell>

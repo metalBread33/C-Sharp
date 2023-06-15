@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace PP.Maui.ViewModels
 {
+    [QueryProperty(nameof(ClientID), "clientID")]
     internal class MainViewModel : INotifyPropertyChanged
     {
         public string hello;
@@ -29,6 +30,8 @@ namespace PP.Maui.ViewModels
       
         }
 
+        public Client ClientID { get; set; }
+
         public ObservableCollection<Client> Clients
         {
             get
@@ -42,15 +45,28 @@ namespace PP.Maui.ViewModels
             if (SelectedClient == null)
                 return;
             ClientServices.Current.Delete(SelectedClient);
-           // NotifyPropertyChanged("Clients");
            RefreshView();
         }
 
         public void Add()
         {
             Shell.Current.GoToAsync("//Add_Client");
-            NotifyPropertyChanged("Clients");
+            RefreshView();
         }
+
+        public void Edit()
+        {
+            Shell.Current.GoToAsync($"//EditClient?ClientID={ClientID}");
+        }
+
+        public void ViewProjects()
+        {
+            if (SelectedClient == null)
+                return;
+            Shell.Current.GoToAsync("//ViewClient");
+            RefreshView();
+        }
+
         public void RefreshView()
         {
             NotifyPropertyChanged("Clients");

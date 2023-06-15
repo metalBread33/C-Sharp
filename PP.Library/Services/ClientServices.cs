@@ -50,12 +50,21 @@ namespace PP.Library.Services
             Clients.Add(client);
         }
 
+        public void Edit(Client client)
+        {
+            Clients[client.Id] = client;
+        }
 
 
 
 
 
 
+        //Helper Functions
+        public List<Project> GetProjects(Client client) 
+        {
+            return client.Projects;
+        }
 
 
 

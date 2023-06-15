@@ -1,11 +1,15 @@
 ﻿using System.Net.Security;
+using PP.Library.Models;
 using PP.Maui.ViewModels;
 
 namespace PP.Maui
 {
+    [QueryProperty(nameof(ClientID), "clientID")]
+
     public partial class MainPage : ContentPage
     {
 
+        public Client ClientID { get; set; }
         public MainPage()
         {
             InitializeComponent();
@@ -30,7 +34,7 @@ namespace PP.Maui
 
         private void View_Client_Clicked(object sender, EventArgs e)
         {
-            Shell.Current.GoToAsync("//View_Client");
+            (BindingContext as MainViewModel).ViewProjects();
         }
 
         private void Delete_Client_Clicked(object sender, EventArgs e)

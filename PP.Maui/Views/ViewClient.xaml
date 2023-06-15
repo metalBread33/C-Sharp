@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PP.Maui.Views.ViewClient"
-             Title="ViewClient">
+             Title="ViewClient"
+             NavigatedFrom="OnLeaving"
+             NavigatedTo="OnArriving">
     <VerticalStackLayout>
         <Grid>
             <!--Grid is best used for desktop applications-->
@@ -42,10 +44,10 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Text="Create Project" Clicked="Create_Project_Clicked"></Button>
-                <Button Grid.Column="1" Text="Edit Project Info" Clicked="Edit_Project_Clicked"></Button>
-                <Button Grid.Column="2" Text="Delete Project" Clicked="Delete_Project_Clicked"></Button>
-                <Button Grid.Column="3" Text="Back" Clicked="Back_Clicked"></Button>
+                <Button  Grid.Column="0" Text="Create Project" Clicked="Create_Project_Clicked"></Button>
+                <Button  Grid.Column="1" Text="Edit Project Info" Clicked="Edit_Project_Clicked"></Button>
+                <Button  Grid.Column="2" Text="Delete Project" Clicked="Delete_Project_Clicked"></Button>
+                <Button  Grid.Column="3" Text="Back" Clicked="Back_Clicked"></Button>
             </Grid>
         </Grid>
     </VerticalStackLayout>

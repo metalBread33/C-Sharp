@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PP.Maui.Views.EditClient"
              Title="EditClient"
-             NavigatedFrom="NavigatedFrom"
-             NavigatedTo="NavigatedTo">
+             NavigatedFrom="OnLeaving"
+             NavigatedTo="OnArriving">
     <VerticalStackLayout>
         <Grid>
             <Grid.RowDefinitions>
