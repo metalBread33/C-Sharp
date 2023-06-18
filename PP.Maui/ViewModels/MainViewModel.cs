@@ -11,75 +11,8 @@ using System.Collections.ObjectModel;
 
 namespace PP.Maui.ViewModels
 {
-    [QueryProperty(nameof(ClientID), "clientID")]
-    internal class MainViewModel : INotifyPropertyChanged
+    internal class MainViewModel
     {
-        public string hello;
-        public string Hello
-        {
-            get
-            {
-                return hello;
-            }
 
-            set 
-            {
-                hello = value;
-                NotifyPropertyChanged();
-            }
-      
-        }
-
-        public Client ClientID { get; set; }
-
-        public ObservableCollection<Client> Clients
-        {
-            get
-            {
-                return new ObservableCollection<Client> (ClientServices.Current.Clients);
-            }
-        }
-
-        public void Delete()
-        {
-            if (SelectedClient == null)
-                return;
-            ClientServices.Current.Delete(SelectedClient);
-           RefreshView();
-        }
-
-        public void Add()
-        {
-            Shell.Current.GoToAsync("//Add_Client");
-            RefreshView();
-        }
-
-        public void Edit()
-        {
-            Shell.Current.GoToAsync($"//EditClient?ClientID={ClientID}");
-        }
-
-        public void ViewProjects()
-        {
-            if (SelectedClient == null)
-                return;
-            Shell.Current.GoToAsync("//ViewClient");
-            RefreshView();
-        }
-
-        public void RefreshView()
-        {
-            NotifyPropertyChanged("Clients");
-        }
-
-        public Client SelectedClient { get; set; }
-
-        /*This make INotifyPropertyChange works*/
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

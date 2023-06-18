@@ -56,6 +56,9 @@
 	  <Compile Update="Views\Add_Client.xaml.cs">
 	    <DependentUpon>Add_Client.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\EmployerView.xaml.cs">
+	    <DependentUpon>EmployerView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -69,6 +72,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\EditProj.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\EmployeeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\EmployerView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ViewClient.xaml">

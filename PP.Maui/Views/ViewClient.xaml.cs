@@ -49,7 +49,7 @@ public partial class ViewClient : ContentPage
 
     private void Back_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//MainPage");
+        Shell.Current.GoToAsync("//Employee");
     }
 
     private void OnLeaving(object sender, NavigatedFromEventArgs e)

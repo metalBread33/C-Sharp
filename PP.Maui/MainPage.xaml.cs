@@ -4,52 +4,24 @@ using PP.Maui.ViewModels;
 
 namespace PP.Maui
 {
-    [QueryProperty(nameof(ClientID), "clientID")]
 
     public partial class MainPage : ContentPage
     {
 
-        public Client ClientID { get; set; }
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel(); //BIndingCOntext is class where binding path is found
-            
+            BindingContext = new MainViewModel();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void Employee_Clicked(object sender, EventArgs e)
         {
-            (BindingContext as MainViewModel).Hello = "Clicked";
+            Shell.Current.GoToAsync("//Employee");
         }
 
-        private void Create_Client_Clicked(object sender, EventArgs e)
+        private void Employer_Clicked(object sender, EventArgs e)
         {
-            (BindingContext as MainViewModel).Add();
-        }
-
-        private void Edit_Client_Clicked(object sender, EventArgs e)
-        {
-            Shell.Current.GoToAsync("//EditClient");
-        }
-
-        private void View_Client_Clicked(object sender, EventArgs e)
-        {
-            (BindingContext as MainViewModel).ViewProjects();
-        }
-
-        private void Delete_Client_Clicked(object sender, EventArgs e)
-        {
-            (BindingContext as MainViewModel).Delete();
-        }
-
-        private void NavigatedTo(object sender, NavigatedToEventArgs e)
-        {
-            (BindingContext as MainViewModel).RefreshView();
-        }
-
-        private void RefreshView()
-        {
-
+            Shell.Current.GoToAsync("//Employer");
         }
     }
 }

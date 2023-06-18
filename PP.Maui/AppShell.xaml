@@ -35,9 +35,19 @@
         Route="AddProj"/>
 
     <ShellContent
-        Title="EditProject"
+        Title="Edit Project"
         ContentTemplate="{DataTemplate local2:EditProj}"
         Route="EditProj"
         />
+
+    <ShellContent
+        Title="Employee's View"
+        ContentTemplate="{DataTemplate local2:EmployeeView}"
+        Route="Employee"/>
+
+    <ShellContent
+        Title="Employer's View"
+        ContentTemplate="{DataTemplate local2:EmployerView}"
+        Route="Employer"/>
 
 </Shell>

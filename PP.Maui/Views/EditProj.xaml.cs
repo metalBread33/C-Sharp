@@ -1,3 +1,5 @@
+using PP.Maui.ViewModels;
+
 namespace PP.Maui.Views;
 
 public partial class EditProj : ContentPage
@@ -7,8 +9,18 @@ public partial class EditProj : ContentPage
 		InitializeComponent();
 	}
 
-    private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void SetActive(object sender, CheckedChangedEventArgs e)
     {
 
+    }
+
+    private void OK_Clicked(object sender, EventArgs e)
+    {
+     //   (BindingContext as EditClientVM).EditClient();
+    }
+
+    private void Cancel_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//EditClient");
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.Maui.Views.EmployerView"
+             Title="EmployerView">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Home" Grid.Column="0" Clicked="GoHome"></Button>
+                <Entry Grid.Column="1"  Text="{Binding Path = Search}"></Entry>
+                <Button Text="Search" Grid.Column="2" Clicked="SearchClicked"></Button>
+            </Grid>
+
+            <ListView Grid.Row="1" ItemsSource="{Binding Path=Employees, 
+                Mode=TwoWay}" SelectedItem="{Binding Path=SelectedEmployee,
+                Mode=TwoWay}"></ListView>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Text="Add Employee"></Button>
+                <Button Grid.Column="1" Text="Edit Employee"></Button>
+                <Button Grid.Column="2" Text="View Employee Timecard"></Button>
+                <Button Grid.Column="3" Text="Delete Employee"></Button>
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

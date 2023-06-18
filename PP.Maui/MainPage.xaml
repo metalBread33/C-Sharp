@@ -2,53 +2,26 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PP.Maui.MainPage"
-             NavigatedTo="NavigatedTo"
              >
-
-    <Grid> <!--Grid is best used for desktop applications-->
-          
+    
+    <ScrollView>
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
                 <RowDefinition Height="15*"></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-
-            <Grid Grid.Row ="0" > <!--Grid within a grid-->
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10*"/>  <!--Search bar (?)-->
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Entry Grid.Column="0"  Text="{Binding Path = Hello}"> <!--Entry == TextboxBinding lets us bind to an object-->
-
-                </Entry>
-                <Button Grid.Column="1" Text="Search" Clicked="Button_Clicked"></Button>
-            </Grid>
-
-            <!--Where list of clients will live-->
-            <ListView Grid.Row="1" ItemsSource="{Binding Path = Clients, Mode=TwoWay}"
-                      SelectedItem="{Binding Path= SelectedClient, Mode=TwoWay}"> 
-                
-            </ListView>
-
-            <!--Buttons-->
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <Button Grid.Column="0" Text="Create Client" Clicked="Create_Client_Clicked"></Button>
-                <Button Grid.Column="1" Text="Edit Client Info" Clicked="Edit_Client_Clicked"></Button>
-                <Button Grid.Column="2" Text="View Client's Project" Clicked="View_Client_Clicked" ></Button>
-                <Button Grid.Column="3" Text="Delete Client" Clicked="Delete_Client_Clicked"></Button>
-                
-                
-            </Grid>
             
-           
+            <Label Grid.Row="0" HorizontalOptions="Center" 
+                   VerticalOptions="Center" Text="Welcome to Bootleg Pratice Panther" 
+                   FontSize="Header"></Label>
+            <Button Grid.Row="1" Text="Employee Login" Clicked="Employee_Clicked"></Button>
+            <Button Grid.Row="2" Text="Employer Login" Clicked="Employer_Clicked"></Button>
+
+
+
         </Grid>
-    
+    </ScrollView>
+
 
 </ContentPage>

@@ -26,11 +26,12 @@ public partial class Add_Client : ContentPage
     private void OK_Clicked(object sender, EventArgs e)
     {
 		(BindingContext as Add_ClientVM).AddClient();
+        Shell.Current.GoToAsync("//Employee");
     }
 
     private void Cancel_Clicked(object sender, EventArgs e)
     {
-		Shell.Current.GoToAsync("//MainPage");
+		Shell.Current.GoToAsync("//Employee");
     }
 
 }

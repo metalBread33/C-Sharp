@@ -54,6 +54,7 @@ namespace PP.Maui.ViewModels
         public void EditClient()
         {
             ClientServices.Current.Edit(editClient);
+            Shell.Current.GoToAsync("//Employee");
         }
 
 

@@ -52,7 +52,8 @@ namespace PP.Library.Services
 
         public void Edit(Client client)
         {
-            Clients[client.Id] = client;
+            if (client != null)
+                Clients.Add(client);
         }
 
 
