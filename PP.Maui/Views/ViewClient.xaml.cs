@@ -31,7 +31,7 @@ public partial class ViewClient : ContentPage
 
     private void Delete_Project_Clicked(object sender, EventArgs e)
     {
-
+        (BindingContext as ViewClientVM).Delete();
     }
 
     private void Search_Clicked(object sender, EventArgs e)

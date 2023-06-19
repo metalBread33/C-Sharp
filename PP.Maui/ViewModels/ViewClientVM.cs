@@ -1,4 +1,5 @@
-﻿using PP.Library.Models;
+﻿using Microsoft.Maui.Controls;
+using PP.Library.Models;
 using PP.Library.Services;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,21 @@ namespace PP.Maui.ViewModels
         }
 
         public Client SelectedClient { get; set; }
+        public Project SelectedProject { get; set; }
         public ObservableCollection<Project> Projects 
         { 
             get
             {
                 return new ObservableCollection<Project>(ClientServices.Current.Clients[SelectedClient.Id].Projects);
             }
+        }
+
+        public void Delete()
+        {
+            if (SelectedProject == null)
+                return;
+            ClientServices.Current.Clients[SelectedClient.Id].Projects.Remove(SelectedProject);
+            RefreshView();
         }
 
         public void RefreshView()
