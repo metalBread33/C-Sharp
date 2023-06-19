@@ -22,37 +22,18 @@ namespace PP.Maui.ViewModels
         public bool isActive { get; set; }
 
 
-        public Add_ClientVM (int id=0)
+        public Add_ClientVM ()
         {
-            if (id>0)
-                LoadByID(id);
         }
 
-        public void LoadByID(int id)
-        {
-            if (id == 0)
-                return;
-            Client client = ClientServices.Current.GetClientByID(id);
-
-            if(client != null)
-            {
-                Name = client.Name;
-                Notes = client.Notes;
-                openDate= client.OpenDate;
-                closeDate= client.CloseDate;
-                isActive= client.IsActive;
-            }
-
-            NotifyPropertyChanged(nameof(Name));
-            NotifyPropertyChanged(nameof(Notes));
-
-        }
+   
 
         public void AddClient()
         {
-            if(ID == 0)
-                ClientServices.Current.Add(new Client { Name = Name, Notes=Notes, 
-                    Id=ClientServices.Current.Clients.Count });
+            ClientServices.Current.Add(new Client {
+                Id = ClientServices.Current.Clients.Count,
+                OpenDate = openDate ,Name = Name, Notes=Notes, 
+                 });
         }
 
         public void RefreshView ()

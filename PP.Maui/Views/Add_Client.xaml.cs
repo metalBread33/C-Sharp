@@ -3,7 +3,6 @@ using PP.Library.Models;
 
 namespace PP.Maui.Views;
 
-[QueryProperty(nameof (Id), "ClientID")]
 public partial class Add_Client : ContentPage
 {
 	public Add_Client()

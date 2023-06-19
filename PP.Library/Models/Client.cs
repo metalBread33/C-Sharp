@@ -27,14 +27,20 @@ namespace PP.Library.Models
             Notes = notes;
             IsActive = true;
             CloseDate = default(DateOnly);
+            Projects = new List<Project>();
+            Projects[0] = new Project (0, DateTime.Now, "test", "test", id, this);
         }
 
         public override string ToString()
         {
             return $"{Id+1}) {Name}";
         }
-        public Client() { }
         
+        public Client() 
+        {
+            Projects = new List<Project>();
+            Projects.Add(new Project(1, DateTime.Now, "test", "test", Id, this));
+        }
 
     }//end class Client
 }

@@ -6,25 +6,17 @@ using PP.Library.Services;
 
 namespace PP.Maui.Views;
 
-[QueryProperty(nameof(ClientID), "clientID")]
+[QueryProperty(nameof(ClientID), "ClientID")]
 public partial class ViewClient : ContentPage
 {
 	public ViewClient()
 	{
 		InitializeComponent();
-        BindingContext = new ViewClientVM();
+        BindingContext = new ViewClientVM(ClientID);
 	}
 
     public int ClientID
     { get; set; }
-
-    public ObservableCollection<Project> Projects
-    {
-        get
-        {
-            return new ObservableCollection<Project>(ClientServices.Current.GetClientByID(ClientID).Projects);
-        }
-    }
 
 
     private void Create_Project_Clicked(object sender, EventArgs e)
@@ -59,6 +51,6 @@ public partial class ViewClient : ContentPage
 
     private void OnArriving(object sender, NavigatedToEventArgs e)
     {
-        BindingContext = new ViewClientVM();
+        BindingContext = new ViewClientVM(ClientID);
     }
 }
