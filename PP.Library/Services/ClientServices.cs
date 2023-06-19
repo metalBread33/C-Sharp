@@ -50,16 +50,6 @@ namespace PP.Library.Services
             Clients.Add(client);
         }
 
-        public void Edit(Client client)
-        {
-            if (client != null)
-                Clients.Add(client);
-        }
-
-
-
-
-
 
         //Helper Functions
         public List<Project> GetProjects(Client client) 

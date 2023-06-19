@@ -70,7 +70,7 @@ namespace PP.Maui.ViewModels
 
         public void RefreshView()
         {
-            NotifyPropertyChanged("");
+            NotifyPropertyChanged("Clients");
         }
 
         public Client SelectedClient { get; set; }

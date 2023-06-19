@@ -21,7 +21,7 @@ namespace PP.Maui.ViewModels
 
         public EditClientVM(int id=0) 
         {
-            if(id>0)
+            if(id>=0)
                 LoadByID(id);
         }
 
@@ -53,7 +53,11 @@ namespace PP.Maui.ViewModels
 
         public void EditClient()
         {
-            ClientServices.Current.Edit(editClient);
+            editClient.Name= Name;
+            editClient.Notes= Notes;
+            editClient.OpenDate= openDate;
+            editClient.CloseDate= closeDate;
+            editClient.IsActive= isActive;
             Shell.Current.GoToAsync("//Employee");
         }
 
