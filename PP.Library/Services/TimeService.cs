@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PP.Maui.ViewModels
+namespace PP.Library.Services
 {
-    class AddProj
+    internal class TimeService
     {
 
     }

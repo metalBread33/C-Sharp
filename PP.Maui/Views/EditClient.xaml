@@ -47,8 +47,8 @@
                 Path=OpenDate, Mode=TwoWay}"></DatePicker>
             <DatePicker Grid.Row="3" Grid.Column="1" Date="{Binding 
                 Path=CloseDate, Mode=TwoWay}"></DatePicker>
-            <CheckBox Grid.Row="4" Grid.Column="1" IsChecked="False" 
-                      CheckedChanged="SetActive" ></CheckBox>
+            <CheckBox Grid.Row="4" Grid.Column="1" 
+                      CheckedChanged="SetActive" IsChecked="{Binding Path=Closed}" ></CheckBox>
         </Grid>
 
         <Grid>

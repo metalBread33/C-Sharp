@@ -11,5 +11,11 @@ namespace PP.Library.Models
         public int id { get; set; }
         public string name { get; set; }
         public decimal rate { get; set; }
+        public List<Time> TimeCard { get; set; }
+
+        Employee() 
+        {
+            TimeCard = new List<Time>();
+        }
     }
 }

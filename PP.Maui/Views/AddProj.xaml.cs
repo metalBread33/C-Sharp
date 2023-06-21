@@ -14,6 +14,6 @@ public partial class AddProj : ContentPage
 
 	private void Cancel_Clicked(object sender, EventArgs e)
 	{
-
+		Shell.Current.GoToAsync("//Employee");
 	}
 }

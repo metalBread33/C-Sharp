@@ -51,20 +51,7 @@ namespace PP.Library.Services
         }
 
 
-        //Helper Functions
-        public List<Project> GetProjects(Client client) 
-        {
-            return client.Projects;
-        }
 
-
-
-
-
-
-
-
-        /*For Console APP
         /**********************CRUD FUNCTIONS**********************/
         static public void CreateClient(ref List<Client> clients)
         {
@@ -137,7 +124,7 @@ namespace PP.Library.Services
                 }
 
                 if (choice == 4)
-                    client.IsActive = !client.IsActive;
+                    client.Closed = !client.Closed;
 
                 if (choice == 5)
                     client.Notes = Console.ReadLine() ?? client.Notes;
@@ -175,7 +162,7 @@ namespace PP.Library.Services
         /**********************HELPER FUNCTIONS**********************/
         static private void printClientInfo(Client c, bool edit = false)
         {
-            if (!c.IsActive)
+            if (!c.Closed)
                 Console.WriteLine("Name: " + c.Name + "\nID: " + c.Id +
                     "\nOpened: " + c.OpenDate + "\nClosed: " + c.CloseDate +
                     "\nNotes: " + c.Notes );
@@ -184,7 +171,7 @@ namespace PP.Library.Services
                    "\nOpened: " + c.OpenDate + "\nClosed: Not closed yet " +
                    "\nNotes: " + c.Notes);
             if (edit)
-                Console.WriteLine("Closed: " + (!c.IsActive).ToString());
+                Console.WriteLine("Closed: " + (!c.Closed).ToString());
 
         }// end print info
 

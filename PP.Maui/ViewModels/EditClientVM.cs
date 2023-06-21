@@ -15,9 +15,9 @@ namespace PP.Maui.ViewModels
     {
         public string Name { get; set; }
         public string Notes { get; set; }
-        public DateOnly openDate { get; set; }
-        public DateOnly closeDate { get; set; }
-        public bool isActive { get; set; }
+        public DateOnly OpenDate { get; set; }
+        public DateOnly CloseDate { get; set; }
+        public bool Closed { get; set; }
 
         public EditClientVM(int id=0) 
         {
@@ -37,16 +37,16 @@ namespace PP.Maui.ViewModels
             {
                 Name = editClient.Name;
                 Notes = editClient.Notes;
-                openDate = editClient.OpenDate;
-                closeDate = editClient.CloseDate;
-                isActive = editClient.IsActive;
+                OpenDate = editClient.OpenDate;
+                CloseDate = editClient.CloseDate;
+                Closed = editClient.Closed;
             }
 
             NotifyPropertyChanged(nameof(Name));
             NotifyPropertyChanged(nameof(Notes));
-            NotifyPropertyChanged(nameof(openDate));
-            NotifyPropertyChanged(nameof(closeDate));
-            NotifyPropertyChanged(nameof(isActive));
+            NotifyPropertyChanged(nameof(OpenDate));
+            NotifyPropertyChanged(nameof(CloseDate));
+            NotifyPropertyChanged(nameof(Closed));
             
 
         }
@@ -55,9 +55,9 @@ namespace PP.Maui.ViewModels
         {
             editClient.Name= Name;
             editClient.Notes= Notes;
-            editClient.OpenDate= openDate;
-            editClient.CloseDate= closeDate;
-            editClient.IsActive= isActive;
+            editClient.OpenDate= OpenDate;
+            editClient.CloseDate= CloseDate;
+            editClient.Closed= Closed;
             Shell.Current.GoToAsync("//Employee");
         }
 

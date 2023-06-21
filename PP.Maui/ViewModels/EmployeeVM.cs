@@ -57,6 +57,8 @@ namespace PP.Maui.ViewModels
 
         public void Edit()
         {
+            if (SelectedClient == null)
+                return;
             Shell.Current.GoToAsync($"//EditClient?ClientID={ClientID}");
         }
 

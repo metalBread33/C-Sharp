@@ -18,5 +18,10 @@ public partial class EmployerView : ContentPage
 
 	}
 
-	
+    private void Add_Clicked(object sender, EventArgs e)
+    {
+		Shell.Current.GoToAsync("//AddEmployee");
+    }
+
+
 }

@@ -12,7 +12,7 @@ namespace PP.Library.Models
         public int Id { get; set; }
         public DateOnly OpenDate { get; set; }
         public DateOnly CloseDate { get; set; }
-        public bool IsActive { get; set; }
+        public bool Closed { get; set; }
         public string Name { get; set; }
         public string Notes { get; set; }
         public List<Project> Projects { get; set; }
@@ -25,7 +25,7 @@ namespace PP.Library.Models
             OpenDate = open;
             Name = name;
             Notes = notes;
-            IsActive = true;
+            Closed = false;
             CloseDate = default(DateOnly);
             Projects = new List<Project>();
             Projects[0] = new Project (0, DateTime.Now, "test", "test", id, this);
