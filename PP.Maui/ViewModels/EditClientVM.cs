@@ -15,8 +15,8 @@ namespace PP.Maui.ViewModels
     {
         public string Name { get; set; }
         public string Notes { get; set; }
-        public DateOnly OpenDate { get; set; }
-        public DateOnly CloseDate { get; set; }
+        public DateTime OpenDate { get; set; }
+        public DateTime CloseDate { get; set; }
         public bool Closed { get; set; }
 
         public EditClientVM(int id=0) 

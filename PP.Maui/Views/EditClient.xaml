@@ -44,7 +44,7 @@
             <Entry Grid.Row="1" Grid.Column="1"
                    Text="{Binding Path=Notes, Mode=TwoWay}"></Entry>
             <DatePicker Grid.Row="2" Grid.Column="1" Date="{Binding 
-                Path=OpenDate, Mode=TwoWay}"></DatePicker>
+                Path=OpenDate, Mode=TwoWay}" ></DatePicker>
             <DatePicker Grid.Row="3" Grid.Column="1" Date="{Binding 
                 Path=CloseDate, Mode=TwoWay}"></DatePicker>
             <CheckBox Grid.Row="4" Grid.Column="1" 

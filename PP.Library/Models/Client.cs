@@ -10,15 +10,15 @@ namespace PP.Library.Models
     {
         //Variables
         public int Id { get; set; }
-        public DateOnly OpenDate { get; set; }
-        public DateOnly CloseDate { get; set; }
+        public DateTime OpenDate { get; set; }
+        public DateTime CloseDate { get; set; }
         public bool Closed { get; set; }
         public string Name { get; set; }
         public string Notes { get; set; }
         public List<Project> Projects { get; set; }
 
    
-        public Client(int id, DateOnly open, string name, 
+        public Client(int id, DateTime open, string name, 
             string notes) 
         {
             Id = id;
@@ -26,7 +26,7 @@ namespace PP.Library.Models
             Name = name;
             Notes = notes;
             Closed = false;
-            CloseDate = default(DateOnly);
+            CloseDate = default(DateTime);
             Projects = new List<Project>();
             Projects[0] = new Project (0, DateTime.Now, "test", "test", id, this);
         }

@@ -17,9 +17,6 @@ namespace PP.Maui.ViewModels
         public string Name { get; set; }
         public string Notes { get; set; }
         public int ID { get; set; }
-        public DateOnly openDate { get; set; }
-        public DateOnly closeDate { get; set; }
-        public bool isActive { get; set; }
 
 
         public Add_ClientVM ()
@@ -32,8 +29,8 @@ namespace PP.Maui.ViewModels
         {
             ClientServices.Current.Add(new Client {
                 Id = ClientServices.Current.Clients.Count,
-                OpenDate = openDate ,Name = Name, Notes=Notes, 
-                 });
+                OpenDate = DateTime.Now, CloseDate=DateTime.Now, Name = Name, 
+                Notes=Notes, Closed=false});
         }
 
         public void RefreshView ()

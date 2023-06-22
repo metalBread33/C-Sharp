@@ -39,5 +39,4 @@ public partial class EditClient : ContentPage
         Shell.Current.GoToAsync("//Employee");
     }
 
-
 }

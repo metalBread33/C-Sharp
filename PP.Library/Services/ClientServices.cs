@@ -64,7 +64,7 @@ namespace PP.Library.Services
             Console.Write("Notes on the client: ");
             notes = Console.ReadLine() ?? "None";
 
-            clients.Add(new Client(id, DateOnly.FromDateTime(DateTime.Today), name, notes));
+            clients.Add(new Client(id,DateTime.Today, name, notes));
 
             Console.WriteLine("Added client: " + name);
         } //end CreateClient
@@ -84,7 +84,7 @@ namespace PP.Library.Services
                 return;
 
             char confirm;
-            DateOnly newDT;
+            DateTime newDT;
             Client client = clients[clientNum];
 
             Console.WriteLine("Update client " + client.Name + '?' +
@@ -112,14 +112,14 @@ namespace PP.Library.Services
                 if (choice == 2)
                 {
                     Console.Write("Please enter new date: ");
-                    DateOnly.TryParse(Console.ReadLine(), out newDT);
+                    DateTime.TryParse(Console.ReadLine(), out newDT);
                     client.OpenDate = newDT;
                 }
 
                 if (choice == 3)
                 {
                     Console.Write("Please enter new date: ");
-                    DateOnly.TryParse(Console.ReadLine(), out newDT);
+                    DateTime.TryParse(Console.ReadLine(), out newDT);
                     client.CloseDate = newDT;
                 }
 
