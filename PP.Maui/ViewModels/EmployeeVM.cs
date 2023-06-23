@@ -59,14 +59,14 @@ namespace PP.Maui.ViewModels
         {
             if (SelectedClient == null)
                 return;
-            Shell.Current.GoToAsync($"//EditClient?ClientID={ClientID}");
+            Shell.Current.GoToAsync($"//EditClient?ClientID={SelectedClient.Id}");
         }
 
         public void ViewProjects()
         {
             if (SelectedClient == null)
                 return;
-            Shell.Current.GoToAsync("//ViewClient");
+            Shell.Current.GoToAsync($"//ViewClient?ClientID={SelectedClient.Id}");
             RefreshView();
         }
 

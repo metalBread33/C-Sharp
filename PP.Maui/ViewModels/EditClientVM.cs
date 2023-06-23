@@ -19,7 +19,7 @@ namespace PP.Maui.ViewModels
         public DateTime CloseDate { get; set; }
         public bool Closed { get; set; }
 
-        public EditClientVM(int id=0) 
+        public EditClientVM(int id) 
         {
             if(id>=0)
                 LoadByID(id);
@@ -29,8 +29,6 @@ namespace PP.Maui.ViewModels
 
         public void LoadByID(int id)
         {
-            if (id < 0)
-                return;
              editClient = ClientServices.Current.GetClientByID(id);
 
             if (editClient != null)

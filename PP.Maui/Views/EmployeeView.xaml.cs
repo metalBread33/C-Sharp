@@ -27,7 +27,7 @@ public partial class EmployeeView : ContentPage
 
     private void Edit_Client_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//EditClient");
+        (BindingContext as EmployeeVM).Edit();
     }
 
     private void View_Client_Clicked(object sender, EventArgs e)
