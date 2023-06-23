@@ -10,14 +10,14 @@ namespace PP.Library.Models
     public class Project
     {
         //Variables
-        internal int Id { get; set; }
-        internal DateTime OpenDate {get; set;}
-        internal DateTime CloseDate { get; set;}
-        internal bool IsActive { get; set; }
-        internal string ShortName { get; set; }
-        internal string LongName { get; set; }
-        internal int ClientID { get; set; }
-        internal Client Owner { get; set; }
+        public int Id { get; set; }
+        public DateTime OpenDate {get; set;}
+        public DateTime CloseDate { get; set;}
+        public bool Closed { get; set; }
+        public string ShortName { get; set; }
+        public string LongName { get; set; }
+        public int ClientID { get; set; }
+        public Client Owner { get; set; }
 
         public Project(int id, DateTime open, string sName, string lName,
             int cID, Client owner) 
@@ -25,11 +25,19 @@ namespace PP.Library.Models
             Id= id;
             OpenDate= open; 
             CloseDate= default(DateTime);
-            IsActive = true;
+            Closed = true;
             ShortName= sName;
             LongName= lName;
             ClientID = cID;
             Owner = owner;
+        }
+
+        public Project(string name) 
+        {
+            LongName = name;
+            if (LongName.Length > 10)
+                ShortName = LongName.Substring(0,10) + "...";
+            else ShortName = name;
         }
 
         public override string ToString()
@@ -40,3 +48,4 @@ namespace PP.Library.Models
     } //end class
     
 } //end namespace
+

@@ -23,7 +23,6 @@
         ContentTemplate="{DataTemplate local2:Add_Client}"
         Route="Add_Client"/>
 
-    
     <ShellContent
         Title="Client Info"
         ContentTemplate="{DataTemplate local2:ViewClient}"

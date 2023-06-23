@@ -21,7 +21,7 @@ public partial class ViewClient : ContentPage
 
     private void Create_Project_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//AddProj");
+        Shell.Current.GoToAsync($"//AddProj?ClientID={ClientID}");
     }
 
     private void Edit_Project_Clicked(object sender, EventArgs e)
@@ -52,5 +52,6 @@ public partial class ViewClient : ContentPage
     private void OnArriving(object sender, NavigatedToEventArgs e)
     {
         BindingContext = new ViewClientVM(ClientID);
+        (BindingContext as ViewClientVM).RefreshView();
     }
 }

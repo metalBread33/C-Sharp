@@ -10,7 +10,7 @@ namespace PP.Library.Services
 {
     public class ProjServices
     {
-
+        /*
         private static ProjServices? _instance;
 
         public static ProjServices Current
@@ -22,6 +22,23 @@ namespace PP.Library.Services
                 return _instance;
             }
         }
+        */
+
+        private List<Project> _projects = new List<Project>();
+
+        public List<Project> Projects
+        {
+            get 
+            {
+                return _projects;
+            }
+        }
+
+        public void Add (Project proj)
+        {
+            Projects.Add(proj);
+        }
+
         /**********************CRUD FUNCTIONS**********************/
 
         static public void CreateProject(ref List<Project> projects,
@@ -106,7 +123,7 @@ namespace PP.Library.Services
                         proj.CloseDate = newDT;
                         break;
                     case 4:
-                        proj.IsActive = !proj.IsActive;
+                        proj.Closed = !proj.Closed;
                         break;
                     case 5:
                         int newClient = ClientServices.SelectClient(ref clients) - 1;
@@ -149,7 +166,7 @@ namespace PP.Library.Services
         /**********************HELPER FUNCTIONS**********************/
         static private void printProjectInfo(Project p, bool edit = false)
         {
-            if (!p.IsActive)
+            if (!p.Closed)
                 Console.WriteLine("Name: " + p.LongName + "\nClient's ID: " +
                     p.ClientID + "\nOpened:" + p.OpenDate + "\nClosed Date: " +
                     p.CloseDate + '\n');
@@ -162,7 +179,7 @@ namespace PP.Library.Services
 
             if (edit)
             {
-                Console.WriteLine("Closed: " + p.IsActive.ToString() + '\n');
+                Console.WriteLine("Closed: " + p.Closed.ToString() + '\n');
             }
         } // end printProjectInfo
 

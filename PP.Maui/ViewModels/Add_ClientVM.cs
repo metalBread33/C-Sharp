@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace PP.Maui.ViewModels
 {
-    internal class Add_ClientVM : INotifyPropertyChanged
+    internal class Add_ClientVM
     {
 
         public string Name { get; set; }
@@ -19,32 +19,24 @@ namespace PP.Maui.ViewModels
         public int ID { get; set; }
 
 
-        public Add_ClientVM ()
+        public Add_ClientVM()
         {
         }
 
-   
+
 
         public void AddClient()
         {
-            ClientServices.Current.Add(new Client {
+            ClientServices.Current.Add(new Client
+            {
                 Id = ClientServices.Current.Clients.Count,
-                OpenDate = DateTime.Now, CloseDate=DateTime.Now, Name = Name, 
-                Notes=Notes, Closed=false});
+                OpenDate = DateTime.Now,
+                CloseDate = DateTime.Now,
+                Name = Name,
+                Notes = Notes,
+                Closed = false
+            });
         }
 
-        public void RefreshView ()
-        {
-            NotifyPropertyChanged(nameof(Name));
-            NotifyPropertyChanged(nameof(Notes));
-        }
-
-        /*This make INotifyPropertyChange works*/
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

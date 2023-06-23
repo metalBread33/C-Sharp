@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PP.Maui.Views.AddProj"
-             Title="AddProj">
+             Title="AddProj"
+             NavigatedTo="ContentPage_NavigatedTo"
+             NavigatedFrom="ContentPage_NavigatedFrom">
+            
     <VerticalStackLayout>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -16,12 +19,12 @@
 
             <Label Grid.Column="0" Grid.Row="0"  VerticalOptions="Center"
                    HorizontalOptions="Center" Text="Project Name"></Label>
-            <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Path=ProjName, 
+            <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Path=Name, 
                 Mode=TwoWay}"></Entry>
             
             <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center"
                    HorizontalOptions="Center" Text="Notes"></Label>
-            <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Path=ProjNotes,
+            <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Path=Notes,
                 Mode=TwoWay}"></Entry>
         </Grid>
 

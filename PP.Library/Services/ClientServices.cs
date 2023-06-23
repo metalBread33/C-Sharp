@@ -50,6 +50,11 @@ namespace PP.Library.Services
             Clients.Add(client);
         }
 
+        public void Add(Project project, Client client)
+        {
+            client.Projects.Add(project);
+        }
+
 
 
         /**********************CRUD FUNCTIONS**********************/

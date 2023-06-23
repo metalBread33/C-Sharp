@@ -3,8 +3,6 @@ using PP.Maui.ViewModels;
 
 namespace PP.Maui.Views;
 
-[QueryProperty(nameof(ClientID), "clientID")]
-
 public partial class EmployeeView : ContentPage
 {
     public Client ClientID { get; set; }
@@ -42,6 +40,7 @@ public partial class EmployeeView : ContentPage
 
     private void NavigatedTo(object sender, NavigatedToEventArgs e)
     {
+        BindingContext= new EmployeeVM();
         (BindingContext as EmployeeVM).RefreshView();
     }
 
