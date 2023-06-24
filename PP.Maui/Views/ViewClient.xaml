@@ -7,6 +7,34 @@
              NavigatedTo="OnArriving">
     <VerticalStackLayout>
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Text="Client Info" HorizontalOptions="Center"
+                   Grid.ColumnSpan="2" FontSize="Subtitle"></Label>
+            <Label Grid.Column="0" Grid.Row="1" Text="Client Name:"></Label>
+            <Label Grid.Column="0" Grid.Row="2" Text="Client Notes:"></Label>
+            <Label Grid.Column="0" Grid.Row="3" Text="Open Date:"></Label>
+            <Label Grid.Column="0" Grid.Row="4" Text="Closed:"></Label>
+            <Label Grid.Column="0" Grid.Row="5" Text="Close Date:"></Label>
+
+            <Label Text="{Binding Path=Name}" Grid.Column="1" Grid.Row="1"></Label>
+            <Label Text="{Binding Path=Notes}" Grid.Column="1" Grid.Row="2"></Label>
+            <Label Text="{Binding Path=OpenDate}" Grid.Column="1" Grid.Row="3"></Label>
+            <Label Text="{Binding Path=Closed}" Grid.Column="1" Grid.Row="4"></Label>
+            <Label Text="{Binding Path=CloseDate}" Grid.Column="1" Grid.Row="5"></Label>
+        </Grid>
+        <Grid>
             <!--Grid is best used for desktop applications-->
 
             <Grid.RowDefinitions>
@@ -15,21 +43,22 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
+            <Label Grid.Row="0" Text="Projects" HorizontalOptions="Center"
+                   FontSize="Subtitle"></Label>
+            <!--
             <Grid Grid.Row ="0" >
-                <!--Grid within a grid-->
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*"/>
-                    <!--Search bar (?)-->
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Entry Grid.Column="0"  Text="{Binding Path = Hello}">
-                    <!--Entry == TextboxBinding lets us bind to an object-->
 
                 </Entry>
                 <Button Grid.Column="1" Text="Search" Clicked="Search_Clicked"></Button>
             </Grid>
-
-            <!--Where list of projects will live-->
+        -->
+        <!--Where list of projects will live-->
             <ListView Grid.Row="1" ItemsSource="{Binding Path = Projects, Mode=TwoWay}"
                       SelectedItem="{Binding Path= SelectedProject, Mode=TwoWay}">
 

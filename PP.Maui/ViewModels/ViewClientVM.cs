@@ -30,6 +30,45 @@ namespace PP.Maui.ViewModels
             }
         }
 
+        public string Name
+        {
+            get
+            {
+                return SelectedClient.Name;
+            }
+        }
+
+        public string Notes
+        {
+            get { return SelectedClient.Notes; }
+        }
+
+        public string OpenDate
+        {
+            get
+            {
+                return  SelectedClient.OpenDate.ToShortDateString();
+            }
+        }
+
+        public string CloseDate
+        {
+            get
+            {
+                return SelectedClient.CloseDate.ToShortDateString();
+            }
+        }
+
+        public string Closed
+        {
+            get
+            {
+                if (SelectedClient.Closed)
+                    return "Yes";
+                else return "No";
+            }
+        }
+
         public void Delete()
         {
             if (SelectedProject == null)
