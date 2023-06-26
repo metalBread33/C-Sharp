@@ -22,7 +22,7 @@ public partial class EmployerView : ContentPage
 
     private void Add_Clicked(object sender, EventArgs e)
     {
-		Shell.Current.GoToAsync("//AddEmployee");
+		(BindingContext as EmployerVM).Add();
 		(BindingContext as EmployerVM).RefreshView();
     }
 
@@ -40,5 +40,10 @@ public partial class EmployerView : ContentPage
     {
 		BindingContext = new EmployerVM();
 		(BindingContext as EmployerVM).RefreshView();
+    }
+
+    private void Edit_Clicked(object sender, EventArgs e)
+    {
+		(BindingContext as EmployerVM).Edit();
     }
 }

@@ -54,4 +54,9 @@
         ContentTemplate="{DataTemplate local2:Add_Employee}"
         Route="AddEmployee"/>
 
+    <ShellContent
+        Title="Edit Employee"
+        ContentTemplate="{DataTemplate local2:EditEmployee}"
+        Route="EditEmployee"/>
+
 </Shell>

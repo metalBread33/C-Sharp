@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace PP.Maui.ViewModels
 {
-    [QueryProperty(nameof(ClientID), "ClientID")]
 
     class EmployeeVM :INotifyPropertyChanged
     {
@@ -30,8 +29,6 @@ namespace PP.Maui.ViewModels
             }
 
         }
-
-        public Client ClientID { get; set; }
 
         public ObservableCollection<Client> Clients
         {
