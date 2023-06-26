@@ -7,11 +7,11 @@ using PP.Library.Models;
 
 namespace PP.Library.Services
 {
-    internal class EmployeeServices
+    public class EmployeeServices
     {
         private static EmployeeServices? _instance;
 
-        public static EmployeeServices current
+        public static EmployeeServices Current
         {
             get
             {
@@ -21,11 +21,27 @@ namespace PP.Library.Services
             }
         }
 
-        private List<Employee> _employees = new List<Employee>();
+        private List<Employee> _employees = new List<Employee>()
+        {
+            new Employee() {id = 0, name="John", rate=10}
+        };
+
+        public List<Employee> Employees
+        { get { return _employees; } }
 
         public Employee GetEmployeeByID(int id)
         {
             return _employees[id];
+        }
+
+        public void Add(Employee employee) 
+        {
+            _employees.Add(employee);
+        }
+
+        public void Delete(Employee employee) 
+        {
+            _employees.Remove(employee);
         }
 
 

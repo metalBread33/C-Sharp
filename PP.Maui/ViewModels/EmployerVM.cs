@@ -7,14 +7,32 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using PP.Library.Models;
+using PP.Library.Services;
 
 namespace PP.Maui.ViewModels
 {
-    class Employer : INotifyPropertyChanged
+    class EmployerVM : INotifyPropertyChanged
     {
-        Employee employee;
+        public Employee employee;
 
-        ObservableCollection<Employee> employees { get; set; }
+        public Employee SelectedEmployee { get; set; }
+
+        public ObservableCollection<Employee> Employees
+        {
+            get { return new ObservableCollection<Employee>(EmployeeServices.Current.Employees); }
+        }
+
+        public void RefreshView()
+        {
+            NotifyPropertyChanged("Employees");
+        }
+
+        public void Delete()
+        {
+            if (SelectedEmployee!= null)
+                EmployeeServices.Current.Delete(SelectedEmployee);
+            RefreshView();
+        }
 
         /*This make INotifyPropertyChange works*/
         public event PropertyChangedEventHandler PropertyChanged;
@@ -23,5 +41,7 @@ namespace PP.Maui.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        
     }
 }

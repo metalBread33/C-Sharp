@@ -13,9 +13,14 @@ namespace PP.Library.Models
         public decimal rate { get; set; }
         public List<Time> TimeCard { get; set; }
 
-        Employee() 
+        public Employee() 
         {
             TimeCard = new List<Time>();
+        }
+
+        public override string ToString()
+        {
+            return $"{id}) {name}";
         }
     }
 }
