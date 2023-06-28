@@ -28,7 +28,6 @@ namespace PP.Library.Models
             Closed = false;
             CloseDate = default(DateTime);
             Projects = new List<Project>();
-            Projects[0] = new Project (0, DateTime.Now, "test", "test", id, this);
         }
 
         public override string ToString()
@@ -39,7 +38,6 @@ namespace PP.Library.Models
         public Client() 
         {
             Projects = new List<Project>();
-            Projects.Add(new Project(1, DateTime.Now, "test", "test", Id, this));
         }
 
     }//end class Client

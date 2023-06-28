@@ -79,4 +79,9 @@
         ContentTemplate="{DataTemplate local2:ViewClient}"
         Route="ViewTime"/>
 
+    <ShellContent
+        Title="View Project"
+        ContentTemplate="{DataTemplate local2:ViewProj}"
+        Route="ViewProj"/>
+
 </Shell>

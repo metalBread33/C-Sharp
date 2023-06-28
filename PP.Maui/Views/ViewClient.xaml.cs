@@ -26,12 +26,19 @@ public partial class ViewClient : ContentPage
 
     private void Edit_Project_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//EditProj");
+        //hell.Current.GoToAsync($"//EditProj?ClientID={ClientID}&ProjID={SelectedProject.Id}");
+        (BindingContext as ViewClientVM).Edit();
+
     }
 
     private void Delete_Project_Clicked(object sender, EventArgs e)
     {
         (BindingContext as ViewClientVM).Delete();
+    }
+
+    private void View_Project_Clicked(object sender, EventArgs e)
+    {
+        //(BindingContext as ViewClientVM).Delete();
     }
 
     private void Search_Clicked(object sender, EventArgs e)
@@ -54,4 +61,6 @@ public partial class ViewClient : ContentPage
         BindingContext = new ViewClientVM(ClientID);
         (BindingContext as ViewClientVM).RefreshView();
     }
+
+    public Project SelectedProject { get; set; }
 }

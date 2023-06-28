@@ -77,6 +77,11 @@ namespace PP.Maui.ViewModels
             RefreshView();
         }
 
+        public void Edit()
+        {
+            Shell.Current.GoToAsync($"//EditProj?ClientID={SelectedClient.Id}&ProjID={SelectedProject.Id}");
+        }
+
         public void RefreshView()
         {
             NotifyPropertyChanged("Projects");
