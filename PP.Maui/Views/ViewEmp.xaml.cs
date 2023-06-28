@@ -5,7 +5,6 @@ using PP.Maui.ViewModels;
 namespace PP.Maui.Views;
 
 [QueryProperty(nameof(EmpID), "EmpID")]
-
 public partial class ViewEmp : ContentPage
 {
 	public int EmpID { get; set; }
@@ -18,10 +17,10 @@ public partial class ViewEmp : ContentPage
 
     private void Add_Clicked(object sender, EventArgs e)
     {
+        Shell.Current.GoToAsync($"//AddTime?EmpID={EmpID}");
+    }
 
-    }  
-	
-	private void Delete_Clicked(object sender, EventArgs e)
+    private void Delete_Clicked(object sender, EventArgs e)
     {
         (BindingContext as ViewEmpVm).Delete();
         refresh();
@@ -29,12 +28,12 @@ public partial class ViewEmp : ContentPage
 
     private void Edit_Clicked(object sender, EventArgs e)
     {
-
+        Shell.Current.GoToAsync($"//EditTime?TimeID={EmpID}");
     }
 
     private void View_Clicked(object sender, EventArgs e)
     {
-
+        Shell.Current.GoToAsync($"//ViewTime?EmpID={EmpID}");
     }
 
     private void Back_Clicked(object sender, EventArgs e)

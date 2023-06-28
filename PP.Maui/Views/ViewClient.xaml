@@ -45,20 +45,7 @@
 
             <Label Grid.Row="0" Text="Projects" HorizontalOptions="Center"
                    FontSize="Subtitle"></Label>
-            <!--
-            <Grid Grid.Row ="0" >
-                
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10*"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Entry Grid.Column="0"  Text="{Binding Path = Hello}">
 
-                </Entry>
-                <Button Grid.Column="1" Text="Search" Clicked="Search_Clicked"></Button>
-            </Grid>
-        -->
-        <!--Where list of projects will live-->
             <ListView Grid.Row="1" ItemsSource="{Binding Path = Projects, Mode=TwoWay}"
                       SelectedItem="{Binding Path= SelectedProject, Mode=TwoWay}">
 

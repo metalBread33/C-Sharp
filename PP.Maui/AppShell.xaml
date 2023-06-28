@@ -64,4 +64,19 @@
         ContentTemplate="{DataTemplate local2:ViewEmp}"
         Route="ViewEmployee"/>
 
+    <ShellContent
+        Title="Add Time Entry"
+        ContentTemplate="{DataTemplate local2:AddTime}"
+        Route="AddTime"/>
+
+    <ShellContent
+        Title="Edit Time Entry"
+        ContentTemplate="{DataTemplate local2:EditTime}"
+        Route="EditTime"/>
+
+    <ShellContent
+        Title="View Time Entry"
+        ContentTemplate="{DataTemplate local2:ViewClient}"
+        Route="ViewTime"/>
+
 </Shell>
