@@ -15,6 +15,7 @@ namespace PP.Library.Models
         public int ProjectId { get; set; }
         public Employee employee { get; set; }
         public Project project { get; set; }
+        public Client client { get; set; }
 
         public Time()
         {
@@ -23,8 +24,9 @@ namespace PP.Library.Models
 
         public override string ToString()
         {
-            return $"Date: {Date} Hours:{Hours}" +
-                $"Project Info {project}";
+            return $"Date: {Date.ToLongDateString()} Hours: {Hours} \t" +
+                $"Project Info: {project}\t ";
+               //+ $"Client Info: {client}";
         }
     }
 }

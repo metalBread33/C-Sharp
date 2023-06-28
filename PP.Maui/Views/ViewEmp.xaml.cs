@@ -23,10 +23,11 @@ public partial class ViewEmp : ContentPage
 	
 	private void Delete_Clicked(object sender, EventArgs e)
     {
-
+        (BindingContext as ViewEmpVm).Delete();
+        refresh();
     }
-	
-	private void Edit_Clicked(object sender, EventArgs e)
+
+    private void Edit_Clicked(object sender, EventArgs e)
     {
 
     }
@@ -49,6 +50,11 @@ public partial class ViewEmp : ContentPage
     private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
         BindingContext = new ViewEmpVm(EmpID);
+        refresh();   
+    }
+
+    private void refresh()
+    {
         (BindingContext as ViewEmpVm).Refresh();
     }
 }

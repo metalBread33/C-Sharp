@@ -15,7 +15,20 @@ namespace PP.Library.Models
 
         public Employee() 
         {
-            TimeCard= new List<Time>();
+            TimeCard = new List<Time>()
+            {
+                new Time()
+                {
+                    Hours=12,
+                    employee=this,
+                    Date=DateTime.Now,
+                    project= new Project("Name") 
+                    {
+                        Id=1
+                    }
+                }
+            };
+
         }
 
         public override string ToString()

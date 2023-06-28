@@ -14,11 +14,18 @@ namespace PP.Maui.ViewModels
 {
     internal class ViewEmpVm : INotifyPropertyChanged
     {
-        public ObservableCollection<Time> TimeCard { get; set; }
+        
         public Employee employee { get; set; }
         public int ID { get; set; }
         public string Name { get; set; }
         public decimal Rate { get; set; }
+        public Time SelectedTime { get; set; }
+
+        public ObservableCollection<Time> TimeCard
+        {
+            get { return new ObservableCollection<Time>(EmployeeServices.Current.Employees[ID].TimeCard); }
+        }
+
 
         public ViewEmpVm(int EmpID)
         {
@@ -33,15 +40,19 @@ namespace PP.Maui.ViewModels
                 return;
             Name = employee.name;
             Rate = employee.rate;
-            TimeCard = new ObservableCollection<Time>(employee.TimeCard);
+        }
 
+        public void Delete()
+        {
+            if (SelectedTime == null)
+                return;
+            EmployeeServices.Current.Employees[employee.id].TimeCard.Remove(SelectedTime);
+            Refresh();
         }
 
         public void Refresh()
         {
-            NotifyPropertyChanged(nameof(Name));
-            NotifyPropertyChanged(nameof(Rate));
-            NotifyPropertyChanged(nameof(TimeCard));
+            NotifyPropertyChanged("TimeCard");
         }
 
         public void Back()
