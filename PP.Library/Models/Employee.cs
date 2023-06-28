@@ -15,7 +15,7 @@ namespace PP.Library.Models
 
         public Employee() 
         {
-            TimeCard = new List<Time>();
+            TimeCard= new List<Time>();
         }
 
         public override string ToString()

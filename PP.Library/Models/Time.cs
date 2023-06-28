@@ -9,11 +9,22 @@ namespace PP.Library.Models
     public class Time
     {
         public int Hours { get; set; }
-        public DateOnly Date { get; set; }
+        public DateTime Date { get; set; }
         public string Narrative { get; set; }
         public int EmployeeID { get; set; }
         public int ProjectId { get; set; }
-        private Employee employee { get; set; }
-        private Project project { get; set; }
+        public Employee employee { get; set; }
+        public Project project { get; set; }
+
+        public Time()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return $"Date: {Date} Hours:{Hours}" +
+                $"Project Info {project}";
+        }
     }
 }

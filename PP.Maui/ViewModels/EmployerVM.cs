@@ -44,6 +44,11 @@ namespace PP.Maui.ViewModels
             Shell.Current.GoToAsync($"//EditEmployee?EmpID={SelectedEmployee.id}");
         }
 
+        public void View()
+        {
+            Shell.Current.GoToAsync($"//ViewEmployee?EmpID={SelectedEmployee.id}");
+        }
+
         /*This make INotifyPropertyChange works*/
         public event PropertyChangedEventHandler PropertyChanged;
 

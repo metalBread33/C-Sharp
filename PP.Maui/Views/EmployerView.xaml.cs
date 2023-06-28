@@ -46,4 +46,9 @@ public partial class EmployerView : ContentPage
     {
 		(BindingContext as EmployerVM).Edit();
     }
+
+    private void View_Clicked(object sender, EventArgs e)
+    {
+        (BindingContext as EmployerVM).View();
+    }
 }

@@ -59,4 +59,9 @@
         ContentTemplate="{DataTemplate local2:EditEmployee}"
         Route="EditEmployee"/>
 
+    <ShellContent
+        Title="View Employee"
+        ContentTemplate="{DataTemplate local2:ViewEmp}"
+        Route="ViewEmployee"/>
+
 </Shell>
