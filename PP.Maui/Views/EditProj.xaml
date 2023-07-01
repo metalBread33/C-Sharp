@@ -11,7 +11,6 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -20,24 +19,20 @@
 
             <Label Text="Name" Grid.Column="0" Grid.Row="0"
                    HorizontalOptions="Center" VerticalOptions="Center"></Label>
-            <Label Text="Notes" Grid.Column="0" Grid.Row="1"
+            <Label Text="Opened" Grid.Column="0" Grid.Row="1"
                    HorizontalOptions="Center" VerticalOptions="Center"></Label>
-            <Label Text="Opened" Grid.Column="0" Grid.Row="2"
+            <Label Text="Close Date" Grid.Column="0" Grid.Row="2"
                    HorizontalOptions="Center" VerticalOptions="Center"></Label>
-            <Label Text="Close Date" Grid.Column="0" Grid.Row="3"
-                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
-            <Label Text="Closed" Grid.Column="0" Grid.Row="4" 
+            <Label Text="Closed" Grid.Column="0" Grid.Row="3" 
                    HorizontalOptions="Center" VerticalOptions="Center"></Label>
 
             <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Path=ProjName,
                 Mode=TwoWay}"></Entry>
-            <Entry Grid.Column="1" Grid.Row="1" Text="{Binding Path=ProjNotes,
-                Mode=TwoWay}"></Entry>
-            <DatePicker Grid.Column="1" Grid.Row="2" Date="{Binding Path=OpenDate,
+            <DatePicker Grid.Column="1" Grid.Row="1" Date="{Binding Path=OpenDate,
                 Mode=TwoWay}"></DatePicker>
-            <DatePicker Grid.Column="1" Grid.Row="3" Date="{Binding Path=CloseDate,
+            <DatePicker Grid.Column="1" Grid.Row="2" Date="{Binding Path=CloseDate,
                 Mode=TwoWay}"></DatePicker>
-            <CheckBox Grid.Column="1" Grid.Row="4" CheckedChanged="SetActive"></CheckBox>
+            <CheckBox Grid.Column="1" Grid.Row="3" CheckedChanged="SetActive"></CheckBox>
         </Grid>
 
         <Grid>

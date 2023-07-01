@@ -38,7 +38,8 @@ public partial class ViewClient : ContentPage
 
     private void View_Project_Clicked(object sender, EventArgs e)
     {
-        //(BindingContext as ViewClientVM).Delete();
+        (BindingContext as ViewClientVM).View();
+
     }
 
     private void Search_Clicked(object sender, EventArgs e)

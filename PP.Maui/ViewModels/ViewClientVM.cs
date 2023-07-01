@@ -79,7 +79,16 @@ namespace PP.Maui.ViewModels
 
         public void Edit()
         {
+            if (SelectedProject == null)
+                return;
             Shell.Current.GoToAsync($"//EditProj?ClientID={SelectedClient.Id}&ProjID={SelectedProject.Id}");
+        }
+
+        public void View()
+        {
+            if (SelectedProject == null)
+                return;
+            Shell.Current.GoToAsync($"//ViewProj?ClientID={SelectedClient.Id}&ProjID={SelectedProject.Id}");
         }
 
         public void RefreshView()

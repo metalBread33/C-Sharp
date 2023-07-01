@@ -14,7 +14,6 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
             <Label Grid.Column="0" Grid.Row="0"  VerticalOptions="Center"
@@ -22,10 +21,6 @@
             <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Path=Name, 
                 Mode=TwoWay}"></Entry>
             
-            <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center"
-                   HorizontalOptions="Center" Text="Notes"></Label>
-            <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Path=Notes,
-                Mode=TwoWay}"></Entry>
         </Grid>
 
         <Grid>

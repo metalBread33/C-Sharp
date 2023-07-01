@@ -10,19 +10,6 @@ namespace PP.Library.Services
 {
     public class ProjServices
     {
-        /*
-        private static ProjServices? _instance;
-
-        public static ProjServices Current
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new ProjServices();
-                return _instance;
-            }
-        }
-        */
 
         private List<Project> _projects = new List<Project>();
 
