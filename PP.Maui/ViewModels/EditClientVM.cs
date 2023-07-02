@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,8 +46,13 @@ namespace PP.Maui.ViewModels
             NotifyPropertyChanged(nameof(OpenDate));
             NotifyPropertyChanged(nameof(CloseDate));
             NotifyPropertyChanged(nameof(Closed));
-            
+        }
 
+        public void SetActive()
+        {
+            if (ClientServices.Current.CanClose(editClient))
+                Closed = !Closed;
+            else return;
         }
 
         public void EditClient()

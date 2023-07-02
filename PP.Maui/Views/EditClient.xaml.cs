@@ -25,7 +25,7 @@ public partial class EditClient : ContentPage
 
     private void SetActive(object sender, CheckedChangedEventArgs e)
     {
-
+        (BindingContext as EditClientVM).SetActive();
     }
 
     private void OK_Clicked(object sender, EventArgs e)

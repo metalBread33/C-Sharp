@@ -37,6 +37,14 @@ namespace PP.Library.Services
             return clients[id];
         }
 
+        public bool CanClose(Client c)
+        {
+            foreach (var proj in c.Projects)
+                if (proj.Closed == false)
+                    return false;
+            return true;
+        }
+
         /*For Maui APP
         /**********************CRUD FUNCTIONS**********************/
         public void Delete(Client client) 
