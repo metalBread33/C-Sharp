@@ -31,6 +31,7 @@ namespace PP.Maui.ViewModels
         {
             if (EmpID >= 0)
                 LoadByID(EmpID);
+            ID= EmpID;
         }
 
         public void LoadByID(int ID) 

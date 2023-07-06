@@ -5,17 +5,20 @@
              Title="ViewEmp"
              NavigatedFrom="ContentPage_NavigatedFrom"
              NavigatedTo="ContentPage_NavigatedTo">
-    <VerticalStackLayout>
-        <Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+       
+        <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
             </Grid.RowDefinitions>
       
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -39,7 +42,7 @@
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="15*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Text="TimeCard" Grid.Row="0"
                        HorizontalOptions="Center" FontSize="Subtitle"></Label>
@@ -48,20 +51,22 @@
                           ></ListView>
             </Grid>
 
-            <Grid Grid.Row="2" Grid.ColumnSpan="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Button Text="Add Time Entry" Grid.Column="0" Clicked="Add_Clicked"></Button>
-                <Button Text="Delete Time Entry" Grid.Column="1" Clicked="Delete_Clicked"></Button>
-                <Button Text="Edit Time Entry" Grid.Column="2" Clicked="Edit_Clicked"></Button>
-                <Button Text="View Time Entry" Grid.Column="3" Clicked="View_Clicked"></Button>
-                <Button Text="Back" Grid.Column="4" Clicked="Back_Clicked"></Button>
-            </Grid>
+          
         </Grid>
-    </VerticalStackLayout>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Text="Add Time Entry" Grid.Column="0" Clicked="Add_Clicked"></Button>
+            <Button Text="Delete Time Entry" Grid.Column="1" Clicked="Delete_Clicked"></Button>
+            <Button Text="Edit Time Entry" Grid.Column="2" Clicked="Edit_Clicked"></Button>
+            <Button Text="View Time Entry" Grid.Column="3" Clicked="View_Clicked"></Button>
+            <Button Text="Back" Grid.Column="4" Clicked="Back_Clicked"></Button>
+        </Grid>
+    </Grid>
 </ContentPage>

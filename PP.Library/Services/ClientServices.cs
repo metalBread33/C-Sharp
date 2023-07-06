@@ -188,7 +188,7 @@ namespace PP.Library.Services
 
         }// end print info
 
-        static internal int SelectClient(ref List<Client> clients)
+        static public int SelectClient(ref List<Client> clients)
         {
             if (clients.Count == 0)
             {

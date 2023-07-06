@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PP.Library.Services
 {
-    internal class TimeService
+    public class TimeService
     {
-
+        
     }
 }

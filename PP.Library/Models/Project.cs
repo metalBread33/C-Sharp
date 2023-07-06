@@ -42,7 +42,7 @@ namespace PP.Library.Models
 
         public override string ToString()
         {
-            return $"{Id+1}) {ShortName}";
+            return $"{Id+1}) {ShortName} Client: {Owner}";
         }
 
     } //end class

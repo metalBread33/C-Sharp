@@ -18,6 +18,9 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -31,25 +34,27 @@
                 <DatePicker Date="{Binding Path=Date, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></DatePicker>
 
                 <Label Text="What was done" Grid.Column="0" Grid.Row="2"></Label>
-                <Entry Text="{Binding Path=Narrative, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" ></Entry>
+                <Entry Text="{Binding Path=Narrative, Mode=TwoWay}" Grid.Column="1" Grid.Row="2"></Entry>
+
+
+                <Label Text="Select the project worked on" Grid.ColumnSpan="2" Grid.Row="3"></Label>
+                <ListView ItemsSource="{Binding Path=Projects}" SelectedItem="{Binding Path=SelectedProj}" Grid.ColumnSpan="2" Grid.Row="4"></ListView>
+
+
+
             </Grid>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                
-            </Grid>
-            
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Button Text="Add Time Entry" Grid.Column="0" Clicked="Add_Clicked"></Button>
-                <Button Text="Cancel" Grid.Column="1" Clicked="Back_Clicked"></Button>
-            </Grid>
+
+        </Grid>
+
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Text="Add Time Entry" Grid.Column="0" Clicked="Add_Clicked"></Button>
+            <Button Text="Cancel" Grid.Column="1" Clicked="Back_Clicked"></Button>
         </Grid>
 
     </VerticalStackLayout>

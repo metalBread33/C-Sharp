@@ -23,7 +23,7 @@ namespace PP.Library.Services
 
         private List<Employee> _employees = new List<Employee>()
         {
-            new Employee() {id = 0, name="John", rate=10}
+            //new Employee() {id = 0, name="John", rate=10}
         };
 
         public List<Employee> Employees

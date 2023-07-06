@@ -18,7 +18,7 @@ namespace PP.Maui.ViewModels
 
         public void Add()
         {
-            EmployeeServices.Current.Add(
+            EmployeeServices.Current.Employees.Add(
                 new Employee
                 {
                     id = EmployeeServices.Current.Employees.Count(),

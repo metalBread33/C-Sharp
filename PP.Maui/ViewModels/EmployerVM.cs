@@ -46,6 +46,8 @@ namespace PP.Maui.ViewModels
 
         public void View()
         {
+            if (SelectedEmployee == null)
+                return;
             Shell.Current.GoToAsync($"//ViewEmployee?EmpID={SelectedEmployee.id}");
         }
 
