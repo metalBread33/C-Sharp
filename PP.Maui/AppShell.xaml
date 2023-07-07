@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PP.Maui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PP.Maui"
+    xmlns:local2="clr-namespace:PP.Maui.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+
+
+    <ShellContent
+        Title="Edit Client"
+        ContentTemplate ="{DataTemplate local2:EditClient}"   
+        Route="EditClient"/>
+
+    <ShellContent
+        Title="Add Client"
+        ContentTemplate="{DataTemplate local2:Add_Client}"
+        Route="Add_Client"/>
+
+    <ShellContent
+        Title="Client Info"
+        ContentTemplate="{DataTemplate local2:ViewClient}"
+        Route="ViewClient"/>
+
+    <ShellContent
+        Title="Create Project"
+        ContentTemplate="{DataTemplate local2:AddProj}"
+        Route="AddProj"/>
+
+    <ShellContent
+        Title="Edit Project"
+        ContentTemplate="{DataTemplate local2:EditProj}"
+        Route="EditProj"
+        />
+
+    <ShellContent
+        Title="Employee's View"
+        ContentTemplate="{DataTemplate local2:EmployeeView}"
+        Route="Employee"/>
+
+    <ShellContent
+        Title="Employer's View"
+        ContentTemplate="{DataTemplate local2:EmployerView}"
+        Route="Employer"/>
+
+    <ShellContent
+        Title="Add Employee"
+        ContentTemplate="{DataTemplate local2:Add_Employee}"
+        Route="AddEmployee"/>
+
+    <ShellContent
+        Title="Edit Employee"
+        ContentTemplate="{DataTemplate local2:EditEmployee}"
+        Route="EditEmployee"/>
+
+    <ShellContent
+        Title="View Employee"
+        ContentTemplate="{DataTemplate local2:ViewEmp}"
+        Route="ViewEmployee"/>
+
+    <ShellContent
+        Title="Add Time Entry"
+        ContentTemplate="{DataTemplate local2:AddTime}"
+        Route="AddTime"/>
+
+    <ShellContent
+        Title="Edit Time Entry"
+        ContentTemplate="{DataTemplate local2:EditTime}"
+        Route="EditTime"/>
+
+    <ShellContent
+        Title="View Time Entry"
+        ContentTemplate="{DataTemplate local2:ViewTime}"
+        Route="ViewTime"/>
+
+    <ShellContent
+        Title="View Project"
+        ContentTemplate="{DataTemplate local2:ViewProj}"
+        Route="ViewProj"/>
+
+</Shell>

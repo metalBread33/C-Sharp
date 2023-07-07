@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.Maui.Views.AddProj"
+             Title="AddProj"
+             NavigatedTo="ContentPage_NavigatedTo"
+             NavigatedFrom="ContentPage_NavigatedFrom">
+            
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0"  VerticalOptions="Center"
+                   HorizontalOptions="Center" Text="Project Name"></Label>
+            <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Path=Name, 
+                Mode=TwoWay}"></Entry>
+            
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="Create Project" Clicked="Create_Clicked"></Button>
+            <Button Grid.Column="1" Text="Cancel" Clicked="Cancel_Clicked"></Button>
+        </Grid>
+        
+    </VerticalStackLayout>
+</ContentPage>

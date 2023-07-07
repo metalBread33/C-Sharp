@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.Maui.Views.ViewProj"
+             Title="ViewProj">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        
+            <Label Text="Project Name: " Grid.Row="0" Grid.Column="0"></Label>
+            <Label Text="{Binding Path=Name}" Grid.Row="0" Grid.Column="1" ></Label>
+            <Label Text="Open Date" Grid.Row="1" Grid.Column="0"></Label>
+            <Label Text="{Binding Path=OpenDate}" Grid.Row="1" Grid.Column="1"></Label>
+            <Label Text="Closed" Grid.Column="0" Grid.Row="2"></Label>
+            <Label Text="{Binding Path=Closed}" Grid.Column="1" Grid.Row="2"></Label>
+            <Label Text="Close Date" Grid.Row="3" Grid.Column="0"></Label>
+            <Label Text="{Binding Path=CloseDate}" Grid.Row="3" Grid.Column="1"></Label>
+            <Label Text="Owner" Grid.Row="4" Grid.Column="0"></Label>
+            <Label Text="{Binding Path=Owner}" Grid.Row="4" Grid.Column="1"></Label>
+    </Grid>
+
+        <Button Text="Go Back" Clicked="Back_Clicked"></Button>
+
+        
+    </VerticalStackLayout>
+</ContentPage>

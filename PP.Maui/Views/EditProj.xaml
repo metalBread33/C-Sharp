@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.Maui.Views.EditProj"
+             Title="EditProj">
+    <VerticalStackLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Name" Grid.Column="0" Grid.Row="0"
+                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            <Label Text="Opened" Grid.Column="0" Grid.Row="1"
+                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            <Label Text="Close Date" Grid.Column="0" Grid.Row="2"
+                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            <Label Text="Closed" Grid.Column="0" Grid.Row="3" 
+                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
+
+            <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Path=ProjName,
+                Mode=TwoWay}"></Entry>
+            <DatePicker Grid.Column="1" Grid.Row="1" Date="{Binding Path=OpenDate,
+                Mode=TwoWay}"></DatePicker>
+            <DatePicker Grid.Column="1" Grid.Row="2" Date="{Binding Path=CloseDate,
+                Mode=TwoWay}"></DatePicker>
+            <CheckBox Grid.Column="1" Grid.Row="3" CheckedChanged="SetActive"></CheckBox>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="OK" Grid.Column="0" Clicked="OK_Clicked"></Button>
+            <Button Text="Cancel" Grid.Column="1" Clicked="Cancel_Clicked"></Button>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

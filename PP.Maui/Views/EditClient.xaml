@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.Maui.Views.EditClient"
+             Title="EditClient"
+             NavigatedFrom="OnLeaving"
+             NavigatedTo="OnArriving">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   Text="Name:" VerticalOptions="Center"
+                   HorizontalOptions="Center"></Label>
+            <Label Grid.Row="1" Grid.Column="0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Text="Notes: "></Label>
+            <Label Grid.Row="2" Grid.Column="0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Text="Open Date: "></Label>
+            <Label Grid.Row="3" Grid.Column="0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Text="Close Date: "></Label>
+            <Label Grid.Row="4" Grid.Column="0"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Text="Closed: "></Label>
+
+            <Entry Grid.Row="0" Grid.Column="1"
+                   Text="{Binding Path=Name, Mode=TwoWay}"></Entry>
+            <Entry Grid.Row="1" Grid.Column="1"
+                   Text="{Binding Path=Notes, Mode=TwoWay}"></Entry>
+            <DatePicker Grid.Row="2" Grid.Column="1" Date="{Binding 
+                Path=OpenDate, Mode=TwoWay}" ></DatePicker>
+            <DatePicker Grid.Row="3" Grid.Column="1" Date="{Binding 
+                Path=CloseDate, Mode=TwoWay}"></DatePicker>
+            <CheckBox Grid.Row="4" Grid.Column="1" 
+                      CheckedChanged="SetActive" ></CheckBox>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="OK" Grid.Column="0" Clicked="OK_Clicked"></Button>
+            <Button Text="Cancel" Grid.Column="1" Clicked="Cancel_Clicked"></Button>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

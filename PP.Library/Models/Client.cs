@@ -9,12 +9,13 @@ namespace PP.Library.Models
     public class Client
     {
         //Variables
-        internal int Id { get; set; }
-        internal DateTime OpenDate { get; set; }
-        internal DateTime CloseDate { get; set; }
-        internal bool IsActive { get; set; }
-        internal string Name { get; set; }
-        internal string Notes { get; set; }
+        public int Id { get; set; }
+        public DateTime OpenDate { get; set; }
+        public DateTime CloseDate { get; set; }
+        public bool Closed { get; set; }
+        public string Name { get; set; }
+        public string Notes { get; set; }
+        public List<Project> Projects { get; set; }
 
    
         public Client(int id, DateTime open, string name, 
@@ -24,11 +25,20 @@ namespace PP.Library.Models
             OpenDate = open;
             Name = name;
             Notes = notes;
-            IsActive = true;
+            Closed = false;
             CloseDate = default(DateTime);
+            Projects = new List<Project>();
         }
 
+        public override string ToString()
+        {
+            return $"{Id+1}) {Name}";
+        }
         
+        public Client() 
+        {
+            Projects = new List<Project>();
+        }
 
     }//end class Client
 }

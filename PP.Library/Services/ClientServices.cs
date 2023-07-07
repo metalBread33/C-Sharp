@@ -3,12 +3,68 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.FileIO;
 using PP.Library.Models;
 
 namespace PP.Library.Services
 {
     public class ClientServices
     {
+        private static ClientServices? _instance;
+
+        public static ClientServices Current
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ClientServices();
+                return _instance;
+            }
+        }
+
+        private List<Client> clients = new List<Client>();
+
+        public List<Client> Clients 
+        { 
+            get 
+            { 
+                return clients; 
+            }
+        }
+
+        public Client GetClientByID (int id)
+        {
+            return clients[id];
+        }
+
+        public bool CanClose(Client c)
+        {
+            foreach (var proj in c.Projects)
+                if (proj.Closed == false)
+                    return false;
+            return true;
+        }
+
+        /*For Maui APP
+        /**********************CRUD FUNCTIONS**********************/
+        public void Delete(Client client) 
+        {
+            int deleteThisClient = client.Id;
+            Clients.RemoveAt(deleteThisClient) ;
+        }
+
+        public void Add(Client client)
+        {
+            Clients.Add(client);
+        }
+
+        public void Add(Project project, Client client)
+        {
+            client.Projects.Add(project);
+        }
+
+
+
         /**********************CRUD FUNCTIONS**********************/
         static public void CreateClient(ref List<Client> clients)
         {
@@ -21,7 +77,7 @@ namespace PP.Library.Services
             Console.Write("Notes on the client: ");
             notes = Console.ReadLine() ?? "None";
 
-            clients.Add(new Client(id, DateTime.Now, name, notes));
+            clients.Add(new Client(id,DateTime.Today, name, notes));
 
             Console.WriteLine("Added client: " + name);
         } //end CreateClient
@@ -81,7 +137,7 @@ namespace PP.Library.Services
                 }
 
                 if (choice == 4)
-                    client.IsActive = !client.IsActive;
+                    client.Closed = !client.Closed;
 
                 if (choice == 5)
                     client.Notes = Console.ReadLine() ?? client.Notes;
@@ -119,7 +175,7 @@ namespace PP.Library.Services
         /**********************HELPER FUNCTIONS**********************/
         static private void printClientInfo(Client c, bool edit = false)
         {
-            if (!c.IsActive)
+            if (!c.Closed)
                 Console.WriteLine("Name: " + c.Name + "\nID: " + c.Id +
                     "\nOpened: " + c.OpenDate + "\nClosed: " + c.CloseDate +
                     "\nNotes: " + c.Notes );
@@ -128,11 +184,11 @@ namespace PP.Library.Services
                    "\nOpened: " + c.OpenDate + "\nClosed: Not closed yet " +
                    "\nNotes: " + c.Notes);
             if (edit)
-                Console.WriteLine("Closed: " + (!c.IsActive).ToString());
+                Console.WriteLine("Closed: " + (!c.Closed).ToString());
 
         }// end print info
 
-        static internal int SelectClient(ref List<Client> clients)
+        static public int SelectClient(ref List<Client> clients)
         {
             if (clients.Count == 0)
             {
@@ -150,5 +206,6 @@ namespace PP.Library.Services
 
             return option;
         } //end select client
+
     }
 }

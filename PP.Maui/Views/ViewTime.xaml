@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PP.Maui.Views.ViewTime"
+             Title="ViewTime"
+             NavigatedFrom="ContentPage_NavigatedFrom"
+             NavigatedTo="ContentPage_NavigatedTo">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Text="Employee Info:" Grid.Column="0" Grid.Row="0"></Label>
+            <Label Text="Project Info:" Grid.Column="0" Grid.Row="1"></Label>
+            <Label Text="Hours Worked:" Grid.Column="0" Grid.Row="2"></Label>
+            <Label Text="Date Worked:" Grid.Column="0" Grid.Row="3"></Label>
+            <Label Text="What was done:" Grid.Column="0" Grid.Row="4"></Label>
+            <Label Text="{Binding Path=employee}" Grid.Column="1" Grid.Row="0"></Label>
+            <Label Text="{Binding Path=project}" Grid.Column="1" Grid.Row="1"></Label>
+            <Label Text="{Binding Path=Hours}" Grid.Column="1" Grid.Row="2"></Label>
+            <Label Text="{Binding Path=Date}" Grid.Column="1" Grid.Row="3"></Label>
+            <Label Text="{Binding Path=Narriative}" Grid.Column="1" Grid.Row="4"></Label>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Button Text="Back" Clicked="Back_Clicked"></Button>
+        </Grid>
+    </Grid>
+</ContentPage>
