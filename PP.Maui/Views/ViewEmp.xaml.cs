@@ -28,7 +28,8 @@ public partial class ViewEmp : ContentPage
 
     private void Edit_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync($"//EditTime?TimeID={EmpID}");
+        (BindingContext as ViewEmpVm).Edit();
+        refresh();
     }
 
     private void View_Clicked(object sender, EventArgs e)

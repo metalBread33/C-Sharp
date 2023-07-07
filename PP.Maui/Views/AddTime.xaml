@@ -31,7 +31,7 @@
                 <Entry Text="{Binding Path=HoursWorked,Mode=TwoWay}" Grid.Column="1" Grid.Row="0"></Entry>
 
                 <Label Text="Date Worked" Grid.Column="0" Grid.Row="1"></Label>
-                <DatePicker Date="{Binding Path=Date, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"></DatePicker>
+                <DatePicker Date="{Binding Path=Date, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" ></DatePicker>
 
                 <Label Text="What was done" Grid.Column="0" Grid.Row="2"></Label>
                 <Entry Text="{Binding Path=Narrative, Mode=TwoWay}" Grid.Column="1" Grid.Row="2"></Entry>

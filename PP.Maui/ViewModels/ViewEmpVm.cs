@@ -57,6 +57,11 @@ namespace PP.Maui.ViewModels
             Shell.Current.GoToAsync($"//ViewTime?EmpID={employee.id}&time={SelectedTime.id}");
         }
 
+        public void Edit()
+        {
+            Shell.Current.GoToAsync($"//EditTime?EmpID={employee.id}&time={SelectedTime.id}");
+        }
+
         public void Refresh()
         {
             NotifyPropertyChanged("TimeCard");
