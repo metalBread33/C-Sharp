@@ -76,7 +76,7 @@
 
     <ShellContent
         Title="View Time Entry"
-        ContentTemplate="{DataTemplate local2:ViewClient}"
+        ContentTemplate="{DataTemplate local2:ViewTime}"
         Route="ViewTime"/>
 
     <ShellContent

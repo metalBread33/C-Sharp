@@ -16,6 +16,7 @@ namespace PP.Library.Models
         public Employee employee { get; set; }
         public Project project { get; set; }
         public Client client { get; set; }
+        public int id { get; set; }
 
         public Time()
         {

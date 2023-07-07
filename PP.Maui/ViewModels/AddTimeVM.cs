@@ -57,7 +57,8 @@ namespace PP.Maui.ViewModels
                     employee = employee,
                     EmployeeID = employee.id,
                     Narrative = Narrative,
-                    ProjectId = SelectedProj.Id
+                    ProjectId = SelectedProj.Id,
+                    id = employee.TimeCard.Count
                 }
                 );
         }

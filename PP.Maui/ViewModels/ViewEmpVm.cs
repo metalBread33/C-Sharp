@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Maui.ApplicationModel.Communication;
 using PP.Library.Models;
 using PP.Library.Services;
 
@@ -49,6 +50,11 @@ namespace PP.Maui.ViewModels
                 return;
             EmployeeServices.Current.Employees[employee.id].TimeCard.Remove(SelectedTime);
             Refresh();
+        }
+
+        public void View()
+        {
+            Shell.Current.GoToAsync($"//ViewTime?EmpID={employee.id}&time={SelectedTime.id}");
         }
 
         public void Refresh()

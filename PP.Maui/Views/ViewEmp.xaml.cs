@@ -33,7 +33,7 @@ public partial class ViewEmp : ContentPage
 
     private void View_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync($"//ViewTime?EmpID={EmpID}");
+        (BindingContext as ViewEmpVm).View();
     }
 
     private void Back_Clicked(object sender, EventArgs e)
