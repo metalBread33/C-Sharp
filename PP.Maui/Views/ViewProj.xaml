@@ -2,10 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PP.Maui.Views.ViewProj"
-             Title="ViewProj">
+             Title="ViewProj"
+             NavigatedFrom="ContentPage_NavigatedFrom"
+             NavigatedTo="ContentPage_NavigatedTo">
     <VerticalStackLayout>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -27,6 +31,8 @@
             <Label Text="{Binding Path=CloseDate}" Grid.Row="3" Grid.Column="1"></Label>
             <Label Text="Owner" Grid.Row="4" Grid.Column="0"></Label>
             <Label Text="{Binding Path=Owner}" Grid.Row="4" Grid.Column="1"></Label>
+            <Label Text="Bills" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Center"></Label>
+            <ListView ItemsSource="{Binding Path=Bills}" Grid.Row="6" Grid.ColumnSpan="2"></ListView>
     </Grid>
 
         <Button Text="Go Back" Clicked="Back_Clicked"></Button>

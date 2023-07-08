@@ -18,6 +18,7 @@ namespace PP.Library.Models
         public string LongName { get; set; }
         public int ClientID { get; set; }
         public Client Owner { get; set; }
+        public List<Bill> Bills { get; set; }
 
         public Project(int id, DateTime open, string sName, string lName,
             int cID, Client owner) 
@@ -30,6 +31,7 @@ namespace PP.Library.Models
             LongName= lName;
             ClientID = cID;
             Owner = owner;
+            Bills = new List<Bill>();
         }
 
         public Project(string name) 

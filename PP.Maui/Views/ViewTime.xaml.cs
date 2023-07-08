@@ -33,4 +33,9 @@ public partial class ViewTime : ContentPage
     {
         (BindingContext as ViewTimeVM).Back();
     }
+
+    private void Bill_Clicked(object sender, EventArgs e)
+    {
+        (BindingContext as ViewTimeVM).Bill();
+    }
 }

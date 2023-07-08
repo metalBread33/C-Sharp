@@ -18,6 +18,7 @@ namespace PP.Maui.ViewModels
         public ViewClientVM(int id)
         {
             SelectedClient = ClientServices.Current.GetClientByID(id);
+            RefreshView();
         }
 
         public Client SelectedClient { get; set; }
@@ -27,6 +28,14 @@ namespace PP.Maui.ViewModels
             get
             {
                 return new ObservableCollection<Project>(ClientServices.Current.Clients[SelectedClient.Id].Projects);
+            }
+        }
+
+        public ObservableCollection<Bill> Bills
+        {
+            get
+            {
+                return new ObservableCollection<Bill>(ClientServices.Current.Clients[SelectedClient.Id].Bills);
             }
         }
 
@@ -94,6 +103,7 @@ namespace PP.Maui.ViewModels
         public void RefreshView()
         {
             NotifyPropertyChanged("Projects");
+            NotifyPropertyChanged("Bills");
         }
 
         /*This make INotifyPropertyChange works*/

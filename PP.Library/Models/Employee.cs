@@ -15,20 +15,7 @@ namespace PP.Library.Models
 
         public Employee() 
         {
-            TimeCard = new List<Time>()
-            {
-                new Time()
-                {
-                    Hours=12,
-                    employee=this,
-                    Date=DateTime.Now,
-                    project= new Project("Name") 
-                    {
-                        Id=1
-                    },
-                    id =0,
-                }
-            };
+            TimeCard = new List<Time>();
 
         }
 
