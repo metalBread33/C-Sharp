@@ -31,7 +31,7 @@
             <Label Text="{Binding Path=CloseDate}" Grid.Row="3" Grid.Column="1"></Label>
             <Label Text="Owner" Grid.Row="4" Grid.Column="0"></Label>
             <Label Text="{Binding Path=Owner}" Grid.Row="4" Grid.Column="1"></Label>
-            <Label Text="Bills" Grid.Row="5" Grid.ColumnSpan="2"></Label>
+            <Label Text="Bills" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Center"></Label>
             <ListView ItemsSource="{Binding Path=Bills}" Grid.Row="6" Grid.ColumnSpan="2"></ListView>
     </Grid>
 

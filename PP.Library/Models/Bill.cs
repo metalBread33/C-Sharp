@@ -10,8 +10,6 @@ namespace PP.Library.Models
     {
         public decimal TotalAmount { get; set; }
         public DateTime DueDate { get; set; }
-        public Employee employee { get; set; }
-        public Project project { get; set; }
 
         public Bill() { }
 
