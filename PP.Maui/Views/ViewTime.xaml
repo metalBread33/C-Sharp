@@ -37,7 +37,12 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <Button Text="Back" Clicked="Back_Clicked"></Button>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Text="Create Bill" Clicked="Bill_Clicked" Grid.Column="0"></Button>
+            <Button Text="Back" Clicked="Back_Clicked" Grid.Column="1"></Button>
         </Grid>
     </Grid>
 </ContentPage>

@@ -27,7 +27,16 @@ namespace PP.Maui.ViewModels
             Hours = time.Hours;
             Date = time.Date;
             Narriative = time.Narrative;
-            
+        }
+
+        public void Bill()
+        {
+            project.Bills.Add(new Bill
+            {
+                DueDate = DateTime.Now.AddDays(7),
+                TotalAmount = Hours * employee.rate
+            });
+            Back();
         }
 
         public void Back()
