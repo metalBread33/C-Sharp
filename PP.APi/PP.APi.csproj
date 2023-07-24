@@ -11,4 +11,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="PP.Library">
+      <HintPath>..\PP.Library\bin\Debug\net6.0\PP.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
