@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.VisualBasic.FileIO;
 using Newtonsoft.Json;
 using PP.Library.Models;
@@ -80,6 +81,17 @@ namespace PP.Library.Services
         public void Add(Project project, Client client)
         {
             client.Projects.Add(project);
+        }
+
+        public void Edit (Client newInfo, Client editClient)
+        {
+            editClient.Name = newInfo.Name;
+            editClient.Notes = newInfo.Notes;
+            editClient.OpenDate = newInfo.OpenDate;
+            editClient.CloseDate = newInfo.CloseDate;
+            editClient.Closed = newInfo.Closed;
+
+            var response = new WebRequestHandler().Post($"/Edit/{editClient.Id}", editClient).Result;
         }
 
 
