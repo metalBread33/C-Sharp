@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic.FileIO;
+using Newtonsoft.Json;
 using PP.Library.Models;
+using PP.Library.Utilities;
 
 namespace PP.Library.Services
 {
@@ -24,11 +26,21 @@ namespace PP.Library.Services
 
         private List<Client> clients = new List<Client>();
 
+        public ClientServices()
+        {
+           // clients.Add(new Client { Id = 0, Name = "john" });
+        }
+
         public List<Client> Clients 
         { 
             get 
             { 
-                return clients; 
+                var response = new WebRequestHandler()
+                    .Get("/Client/GetClient")
+                    .Result;
+                var clients = JsonConvert.
+                    DeserializeObject<List<Client>>(response);
+                return clients ?? new List<Client>();
             }
         }
 

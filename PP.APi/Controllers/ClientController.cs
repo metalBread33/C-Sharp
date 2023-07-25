@@ -16,7 +16,7 @@ namespace PP.APi.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("GetClient")]
         public List<Client> Get()
         {
             return ClientDatabase.clients;
