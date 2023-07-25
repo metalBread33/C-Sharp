@@ -11,5 +11,13 @@ namespace PP.APi.Database
             new Client{Id = 1, Name = "h", Closed = false, Notes="N/A"},
             new Client{Id = 2, Name = "g", Closed = false, Notes="N/A"},
         };
+
+        public static int NextId
+        {
+            get
+            {
+                return clients.Count;
+            }
+        }
     }
 }

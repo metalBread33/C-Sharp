@@ -21,6 +21,10 @@ namespace PP.Maui.ViewModels
 
         public Add_ClientVM()
         {
+            ID = ClientServices.Current.Clients.Count;
+            Notes = "";
+            Name = "";
+
         }
 
 

@@ -35,7 +35,7 @@ namespace PP.Library.Services
             get 
             { 
                 var response = new WebRequestHandler()
-                    .Get("/Client/GetClient")
+                    .Get("/Client")
                     .Result;
                 var clients = JsonConvert.
                     DeserializeObject<List<Client>>(response);
@@ -45,7 +45,13 @@ namespace PP.Library.Services
 
         public Client GetClientByID (int id)
         {
-            return clients[id];
+            var response = new WebRequestHandler()
+                    .Get($"/Client/GetClient/{id}")
+                    .Result;
+            var client = JsonConvert.
+                DeserializeObject<Client>  (response);
+            return client; 
+            //return clients[id];
         }
 
         public bool CanClose(Client c)
@@ -66,7 +72,8 @@ namespace PP.Library.Services
 
         public void Add(Client client)
         {
-            Clients.Add(client);
+            //Clients.Add(client);
+            var response = new WebRequestHandler().Post("/Add", client).Result;
         }
 
         public void Add(Project project, Client client)
