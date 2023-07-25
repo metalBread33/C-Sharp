@@ -8,8 +8,8 @@ namespace PP.APi.Database
         public static List<Client> clients = new List<Client>
         {
             new Client{Id = 0, Name = "John", Closed = false, Notes="N/A"},
-            new Client{Id = 1, Name = "h", Closed = false, Notes="N/A"},
-            new Client{Id = 2, Name = "g", Closed = false, Notes="N/A"},
+            new Client{Id = 1, Name = "Johnathan", Closed = false, Notes="N/A"},
+            new Client{Id = 2, Name = "Jon", Closed = false, Notes="N/A"},
         };
 
         public static int NextId
