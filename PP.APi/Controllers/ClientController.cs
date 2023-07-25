@@ -21,6 +21,14 @@ namespace PP.APi.Controllers
         {
             return ClientDatabase.clients;
         }
+
+        [HttpGet("GetClient/{id}")]
+        public Client GetID(int id) 
+        {
+            if (id < 0 || id > ClientDatabase.clients.Count)
+                return new Client();
+            return ClientDatabase.clients[id];
+        }
     }
 
 

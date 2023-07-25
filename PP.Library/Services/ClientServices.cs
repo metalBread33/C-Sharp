@@ -28,7 +28,6 @@ namespace PP.Library.Services
 
         public ClientServices()
         {
-           // clients.Add(new Client { Id = 0, Name = "john" });
         }
 
         public List<Client> Clients 
