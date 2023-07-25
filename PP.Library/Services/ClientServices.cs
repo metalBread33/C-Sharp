@@ -46,7 +46,7 @@ namespace PP.Library.Services
         public Client GetClientByID (int id)
         {
             var response = new WebRequestHandler()
-                    .Get($"/Client/GetClient/{id}")
+                    .Get($"/{id}")
                     .Result;
             var client = JsonConvert.
                 DeserializeObject<Client>  (response);
@@ -67,7 +67,8 @@ namespace PP.Library.Services
         public void Delete(Client client) 
         {
             int deleteThisClient = client.Id;
-            Clients.RemoveAt(deleteThisClient) ;
+            var response = new WebRequestHandler().Delete($"/Delete/{deleteThisClient}").Result;
+            //Clients.RemoveAt(deleteThisClient) ;
         }
 
         public void Add(Client client)

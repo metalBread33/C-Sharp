@@ -40,11 +40,9 @@ namespace PP.Library.Utilities
 
         public async Task<string> Post(string url, object obj)
         {
-            var fullUrl = $"https://{host}:{port}{url}";
-
-            using (var client = new HttpClient())
+            using(var client = new HttpClient())
             {
-                using(var request = new HttpRequestMessage(HttpMethod.Post, fullUrl))
+                using(var request = new HttpRequestMessage(HttpMethod.Post, url))
                 {
                     var json = JsonConvert.SerializeObject(obj);
                     using(var stringContent = new StringContent(json, Encoding.UTF8, "application/json"))
@@ -66,7 +64,7 @@ namespace PP.Library.Utilities
             }
         }
 
-        public async Task<string> Delete(string url)
+  public async Task<string> Delete(string url)
         {
             var fullUrl = $"https://{host}:{port}{url}";
             try
