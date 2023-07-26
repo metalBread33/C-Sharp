@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.VisualBasic.FileIO;
+using Newtonsoft.Json;
 using PP.Library.Models;
+using PP.Library.Utilities;
 
 namespace PP.Library.Services
 {
@@ -24,17 +27,32 @@ namespace PP.Library.Services
 
         private List<Client> clients = new List<Client>();
 
+        public ClientServices()
+        {
+        }
+
         public List<Client> Clients 
         { 
             get 
             { 
-                return clients; 
+                var response = new WebRequestHandler()
+                    .Get("/Client")
+                    .Result;
+                var clients = JsonConvert.
+                    DeserializeObject<List<Client>>(response);
+                return clients ?? new List<Client>();
             }
         }
 
         public Client GetClientByID (int id)
         {
-            return clients[id];
+            var response = new WebRequestHandler()
+                    .Get($"/{id}")
+                    .Result;
+            var client = JsonConvert.
+                DeserializeObject<Client>  (response);
+            return client; 
+            //return clients[id];
         }
 
         public bool CanClose(Client c)
@@ -50,17 +68,30 @@ namespace PP.Library.Services
         public void Delete(Client client) 
         {
             int deleteThisClient = client.Id;
-            Clients.RemoveAt(deleteThisClient) ;
+            var response = new WebRequestHandler().Delete($"/Delete/{deleteThisClient}").Result;
+            //Clients.RemoveAt(deleteThisClient) ;
         }
 
         public void Add(Client client)
         {
-            Clients.Add(client);
+            //Clients.Add(client);
+            var response = new WebRequestHandler().Post("/Add", client).Result;
         }
 
         public void Add(Project project, Client client)
         {
             client.Projects.Add(project);
+        }
+
+        public void Edit (Client newInfo, Client editClient)
+        {
+            editClient.Name = newInfo.Name;
+            editClient.Notes = newInfo.Notes;
+            editClient.OpenDate = newInfo.OpenDate;
+            editClient.CloseDate = newInfo.CloseDate;
+            editClient.Closed = newInfo.Closed;
+
+            var response = new WebRequestHandler().Post($"/Edit/{editClient.Id}", editClient).Result;
         }
 
 

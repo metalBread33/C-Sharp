@@ -57,11 +57,23 @@ namespace PP.Maui.ViewModels
 
         public void EditClient()
         {
-            editClient.Name= Name;
-            editClient.Notes= Notes;
-            editClient.OpenDate= OpenDate;
-            editClient.CloseDate= CloseDate;
-            editClient.Closed= Closed;
+            //editClient.Name= Name;
+            //editClient.Notes= Notes;
+            //editClient.OpenDate= OpenDate;
+            //editClient.CloseDate= CloseDate;
+            //editClient.Closed= Closed;
+            var newClientInfo
+                = new Client
+                { 
+                    Name=Name, 
+                    Notes=Notes,
+                    Closed=Closed, 
+                    CloseDate=CloseDate, 
+                    OpenDate=OpenDate,
+                    Projects=editClient.Projects,
+                    Id=editClient.Id
+                };
+            ClientServices.Current.Edit(newClientInfo, editClient);
             Shell.Current.GoToAsync("//Employee");
         }
 
