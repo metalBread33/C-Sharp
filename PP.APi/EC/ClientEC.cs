@@ -5,41 +5,42 @@ namespace PP.APi.EC
 {
     public class ClientEC
     {
-        public Client Edit (Client client)
+        public Client Edit(Client client)
         {
-            var clientToEdit 
-                = ClientDatabase.clients[client.Id];
+            var clientToEdit
+                = Filebase.Current.Clients[client.Id];
 
-            if(clientToEdit != null)
+            if (clientToEdit != null)
             {
-                ClientDatabase.clients.Remove(clientToEdit);
+                Filebase.Current.Clients.Remove(clientToEdit);
             }
-            ClientDatabase.clients.Add(client);
+            Filebase.Current.AddOrUpdate(client);
             return client;
         }
 
-        public Client Add (Client client) 
+        public Client Add(Client client)
         {
-            client.Id = ClientDatabase.NextId;
-            ClientDatabase.clients.Add(client);
+            client.Id = Filebase.NextId;
+            Filebase.Current.AddOrUpdate(client);
             return client;
         }
 
         public Client Delete(int id)
         {
-            if (id < 0 || id > ClientDatabase.clients.Count)
+            if (id < 0 || id > Filebase.Current.Clients.Count)
                 return new Client();
-            var ClientToDelete = ClientDatabase.clients[id];
-            ClientDatabase.clients.RemoveAt(id);
+            var ClientToDelete = Filebase.Current.Clients[id];
+            Filebase.Current.Delete(id.ToString());
             return ClientToDelete;
         }
 
         public Client GetByID(int id)
         {
-            if (id < 0 || id > ClientDatabase.clients.Count)
+            if (id < 0 || id > Filebase.Current.Clients.Count)
                 return new Client();
-            return ClientDatabase.clients[id];
+            return Filebase.Current.Clients[id];
         }
     }
 }
+
 

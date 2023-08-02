@@ -20,19 +20,19 @@ namespace PP.APi.Controllers
         [HttpGet]
         public List<Client> Get()
         {
-            return ClientDatabase.clients;
+            return Filebase.Current.Clients;
         }
 
         [HttpGet("/{id}")]
-        public Client GetByID(int id) 
+        public Client GetByID(int id)
         {
-           return new ClientEC().GetByID(id);
+            return new ClientEC().GetByID(id);
         }
 
         [HttpDelete("/Delete/{id}")]
         public Client Delete(int id)
         {
-           return new ClientEC().Delete(id);
+            return new ClientEC().Delete(id);
         }
 
         [HttpPost("/Edit/{id}")]
@@ -52,3 +52,5 @@ namespace PP.APi.Controllers
 
 
 }
+
+
