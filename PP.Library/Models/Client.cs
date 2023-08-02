@@ -16,6 +16,7 @@ namespace PP.Library.Models
         public string Name { get; set; }
         public string Notes { get; set; }
         public List<Project> Projects { get; set; }
+        public List<Bill> Bills { get; set; }
 
    
         public Client(int id, DateTime open, string name, 
@@ -28,6 +29,7 @@ namespace PP.Library.Models
             Closed = false;
             CloseDate = default(DateTime);
             Projects = new List<Project>();
+            Bills = new List<Bill>();
         }
 
         public override string ToString()

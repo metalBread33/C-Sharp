@@ -30,7 +30,8 @@ namespace PP.Maui.ViewModels
                     Closed = false,
                     OpenDate = DateTime.Now,
                     CloseDate = DateTime.Now,
-                    Id = Owner.Projects.Count
+                    Id = Owner.Projects.Count,
+                    Bills = new List<Bill>()
                 }
                 );
         }

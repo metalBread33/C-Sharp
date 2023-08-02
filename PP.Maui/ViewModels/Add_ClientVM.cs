@@ -27,8 +27,6 @@ namespace PP.Maui.ViewModels
 
         }
 
-
-
         public void AddClient()
         {
             ClientServices.Current.Add(new Client
@@ -38,8 +36,9 @@ namespace PP.Maui.ViewModels
                 CloseDate = DateTime.Now,
                 Name = Name,
                 Notes = Notes,
-                Closed = false
-            });
+                Closed = false,
+                Bills = new List<Bill>()
+            }) ;
         }
 
     }

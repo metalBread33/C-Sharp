@@ -1,4 +1,5 @@
-﻿using PP.Library.Models;
+﻿using Microsoft.VisualBasic;
+using PP.Library.Models;
 using PP.Library.Services;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,19 @@ namespace PP.Maui.ViewModels
             Hours = time.Hours;
             Date = time.Date;
             Narriative = time.Narrative;
-            
+        }
+
+        public void Bill()
+        {
+            Bill bill = new Bill
+            { 
+                DueDate = DateTime.Now.AddDays(7),
+                TotalAmount = Hours * employee.rate 
+            };
+            project.Bills.Add(bill);
+            //ClientServices.Current.Clients[project.Owner.Id].Bills.Add(bill);
+            project.Owner.Bills.Add(bill);
+            Back();
         }
 
         public void Back()

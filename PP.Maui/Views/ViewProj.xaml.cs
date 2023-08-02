@@ -21,4 +21,14 @@ public partial class ViewProj : ContentPage
     {
         Shell.Current.GoToAsync($"//ViewClient?ClientID={ClientID}");
     }
+
+    private void ContentPage_NavigatedFrom(object sender, NavigatedFromEventArgs e)
+    {
+        BindingContext = null;
+    }
+
+    private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+    {
+        BindingContext = new ViewProjVM(ProjID, ClientID);
+    }
 }
